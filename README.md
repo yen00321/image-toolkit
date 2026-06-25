@@ -63,7 +63,7 @@ npm run typecheck
 Set the public site URL after deployment:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://imagetoolkitapp.com
+NEXT_PUBLIC_SITE_URL=https://www.imagetoolkitapp.com
 ```
 
 This value is used for sitemap and metadata URLs.
@@ -92,4 +92,10 @@ The next planned deployment target is Vercel with the custom domain:
 
 ```text
 imagetoolkitapp.com
+```
+
+The canonical production URL is:
+
+```text
+https://www.imagetoolkitapp.com
 ```

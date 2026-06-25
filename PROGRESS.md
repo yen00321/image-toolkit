@@ -8,6 +8,8 @@ Build an English-first global SEO image tools website for Google AdSense monetiz
 
 Site name: Image Toolkit
 
+Canonical production URL: `https://www.imagetoolkitapp.com`
+
 ## Tech Stack
 
 - Next.js App Router
@@ -25,6 +27,8 @@ Site name: Image Toolkit
 - Added generated `robots.txt` and `sitemap.xml` through Next routes:
   - `app/robots.ts`
   - `app/sitemap.ts`
+- Unified SEO URLs to the canonical `www` domain:
+  - `https://www.imagetoolkitapp.com`
 - Added global layout, header, footer, homepage, cards, FAQ, and ad placeholders.
 - Added language switcher with client-side UI translation.
 - Added AdSense-readiness static pages:
