@@ -142,22 +142,21 @@ Note: Browser automation could not inspect `127.0.0.1:3000` because the in-app b
   - `/id/image-resizer`
 - No real Google AdSense code has been added yet.
 - Ad placeholders are already present and ready to replace later.
-- Static AdSense-readiness pages are present, but `hello@example.com` is still a placeholder email.
+- Static AdSense-readiness pages are present. Contact email is currently `hello@imagetoolkitapp.com`.
 - User images are intended to stay in the browser and not upload to a server.
 - `npm install` reported 2 moderate vulnerabilities. Do not use `npm audit fix --force` blindly because it may break dependency compatibility.
 
 ## Recommended Next Steps
 
-1. Replace `hello@example.com` with the real site email after choosing a domain.
+1. Connect `hello@imagetoolkitapp.com` to a real inbox before public launch.
 2. Add proper multilingual SEO routes and `hreflang`.
 3. Add long-form SEO content under each tool page.
 4. Improve mobile visual QA once browser access is available.
 5. Add image test fixtures and automated component checks.
-6. Choose a domain name.
-7. Deploy to Cloudflare Pages, Vercel, or Netlify.
-8. After deployment, set `NEXT_PUBLIC_SITE_URL` to the real domain.
-9. Submit sitemap to Google Search Console.
-10. Apply for Google AdSense after the site has enough content and is publicly accessible.
+6. Deploy to Vercel and bind `imagetoolkitapp.com`.
+7. Set `NEXT_PUBLIC_SITE_URL=https://imagetoolkitapp.com` in Vercel.
+8. Submit sitemap to Google Search Console.
+9. Apply for Google AdSense after the site has enough content and is publicly accessible.
 
 ## Important Files
 

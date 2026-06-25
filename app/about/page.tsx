@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
 import { StaticPageShell } from "@/components/StaticPageShell";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Image Toolkit",
   description:
     "Learn about Image Toolkit, a browser-first collection of free online image tools for resizing, compressing, cropping, and converting images.",
+  alternates: {
+    canonical: `${siteConfig.url}/about`,
+  },
+  openGraph: {
+    title: "About Image Toolkit",
+    description:
+      "Learn about Image Toolkit, a browser-first collection of free online image tools for resizing, compressing, cropping, and converting images.",
+    url: `${siteConfig.url}/about`,
+    type: "website",
+  },
 };
 
 export default function AboutPage() {

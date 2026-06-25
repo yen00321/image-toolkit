@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
 import { StaticPageShell } from "@/components/StaticPageShell";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Read the Image Toolkit privacy policy, including how browser-based image processing works and how future advertising may use cookies.",
+  alternates: {
+    canonical: `${siteConfig.url}/privacy-policy`,
+  },
+  openGraph: {
+    title: "Privacy Policy",
+    description:
+      "Read the Image Toolkit privacy policy, including how browser-based image processing works and how future advertising may use cookies.",
+    url: `${siteConfig.url}/privacy-policy`,
+    type: "website",
+  },
 };
 
 export default function PrivacyPolicyPage() {
@@ -49,8 +60,8 @@ export default function PrivacyPolicyPage() {
 
       <h2>Contact</h2>
       <p>
-        For privacy questions, contact us at <a href="mailto:hello@example.com">hello@example.com</a>. Replace this
-        placeholder address with the official site email before public launch.
+        For privacy questions, contact us at{" "}
+        <a href="mailto:hello@imagetoolkitapp.com">hello@imagetoolkitapp.com</a>.
       </p>
     </StaticPageShell>
   );

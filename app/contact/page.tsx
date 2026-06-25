@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
 import { StaticPageShell } from "@/components/StaticPageShell";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Image Toolkit",
   description: "Contact Image Toolkit for support, feedback, privacy questions, or advertising inquiries.",
+  alternates: {
+    canonical: `${siteConfig.url}/contact`,
+  },
+  openGraph: {
+    title: "Contact Image Toolkit",
+    description: "Contact Image Toolkit for support, feedback, privacy questions, or advertising inquiries.",
+    url: `${siteConfig.url}/contact`,
+    type: "website",
+  },
 };
 
 export default function ContactPage() {
@@ -14,11 +24,10 @@ export default function ContactPage() {
     >
       <h2>Email</h2>
       <p>
-        Contact us at <a href="mailto:hello@example.com">hello@example.com</a>.
+        Contact us at <a href="mailto:hello@imagetoolkitapp.com">hello@imagetoolkitapp.com</a>.
       </p>
       <p>
-        This is a placeholder email for the MVP. Replace it with a real address after choosing the domain name, such as
-        support@yourdomain.com or contact@yourdomain.com.
+        This address should be connected to a real inbox before public launch.
       </p>
 
       <h2>What to Include</h2>

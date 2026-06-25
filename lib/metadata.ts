@@ -7,7 +7,7 @@ export function toolMetadata(tool: ToolInfo): Metadata {
     title: tool.metaTitle,
     description: tool.metaDescription,
     alternates: {
-      canonical: tool.href,
+      canonical: `${siteConfig.url}${tool.href}`,
     },
     openGraph: {
       title: tool.metaTitle,

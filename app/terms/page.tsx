@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
 import { StaticPageShell } from "@/components/StaticPageShell";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
   description:
     "Read the terms of use for Image Toolkit, including responsible use, image rights, availability, and limitations.",
+  alternates: {
+    canonical: `${siteConfig.url}/terms`,
+  },
+  openGraph: {
+    title: "Terms of Use",
+    description:
+      "Read the terms of use for Image Toolkit, including responsible use, image rights, availability, and limitations.",
+    url: `${siteConfig.url}/terms`,
+    type: "website",
+  },
 };
 
 export default function TermsPage() {

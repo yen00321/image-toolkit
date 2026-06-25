@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Image Toolkit",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://example.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://imagetoolkitapp.com",
   description:
     "Free browser-based image tools for resizing, compressing, cropping, and converting images online.",
 };
