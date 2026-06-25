@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import { Suspense, useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -35,29 +34,14 @@ function PageViewTracker({ measurementId }: { measurementId: string }) {
   return null;
 }
 
-export function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
+export function GoogleAnalyticsPageView({ measurementId }: GoogleAnalyticsProps) {
   if (process.env.NODE_ENV !== "production" || !measurementId) {
     return null;
   }
 
   return (
-    <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', '${measurementId}', { send_page_view: false });
-        `}
-      </Script>
-      <Suspense fallback={null}>
-        <PageViewTracker measurementId={measurementId} />
-      </Suspense>
-    </>
+    <Suspense fallback={null}>
+      <PageViewTracker measurementId={measurementId} />
+    </Suspense>
   );
 }
