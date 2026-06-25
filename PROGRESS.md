@@ -4,7 +4,7 @@ Last updated: 2026-06-25
 
 ## Current Goal
 
-Build an English-first global SEO image tools website for future Google AdSense monetization.
+Build an English-first global SEO image tools website for Google AdSense monetization.
 
 Site name: Image Toolkit
 
@@ -15,7 +15,7 @@ Site name: Image Toolkit
 - TypeScript
 - Tailwind CSS
 - Browser-first image processing with Canvas
-- No real AdSense code yet, only ad placeholder blocks
+- Production-only Google AdSense loader with ad placeholder blocks
 
 ## Completed
 
@@ -32,6 +32,9 @@ Site name: Image Toolkit
   - `/privacy-policy`
   - `/terms`
   - `/contact`
+- Added production-only Google AdSense loader in `app/layout.tsx`:
+  - Publisher client: `ca-pub-4691862928355691`
+  - Source: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`
 - Added header utility links and footer links for static pages.
 - Added static pages to `app/sitemap.ts`.
 - Supported UI languages:
@@ -140,8 +143,8 @@ Note: Browser automation could not inspect `127.0.0.1:3000` because the in-app b
   - `/zh/image-resizer`
   - `/vi/image-resizer`
   - `/id/image-resizer`
-- No real Google AdSense code has been added yet.
-- Ad placeholders are already present and ready to replace later.
+- Google AdSense global loader has been added for production.
+- Ad placeholders are still present and ready to replace with real ad units later.
 - Static AdSense-readiness pages are present. Contact email is currently `hello@imagetoolkitapp.com`.
 - User images are intended to stay in the browser and not upload to a server.
 - `npm install` reported 2 moderate vulnerabilities. Do not use `npm audit fix --force` blindly because it may break dependency compatibility.
@@ -153,10 +156,9 @@ Note: Browser automation could not inspect `127.0.0.1:3000` because the in-app b
 3. Add long-form SEO content under each tool page.
 4. Improve mobile visual QA once browser access is available.
 5. Add image test fixtures and automated component checks.
-6. Deploy to Vercel and bind `imagetoolkitapp.com`.
-7. Set `NEXT_PUBLIC_SITE_URL=https://imagetoolkitapp.com` in Vercel.
-8. Submit sitemap to Google Search Console.
-9. Apply for Google AdSense after the site has enough content and is publicly accessible.
+6. Submit sitemap to Google Search Console.
+7. Replace ad placeholder blocks with real AdSense ad units after approval/configuration.
+8. Add AdSense policy-friendly content depth to each tool page.
 
 ## Important Files
 

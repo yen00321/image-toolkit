@@ -33,9 +33,20 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   const enableAnalytics = process.env.NODE_ENV === "production" && Boolean(gaId);
+  const enableAdsense = process.env.NODE_ENV === "production";
 
   return (
     <html lang="en">
+      <head>
+        {enableAdsense ? (
+          <Script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4691862928355691"
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        ) : null}
+      </head>
       <body>
         {enableAnalytics ? (
           <>

@@ -1,6 +1,6 @@
 # Image Toolkit
 
-Image Toolkit is an English-first, browser-based image tools website built for global SEO traffic and future Google AdSense monetization.
+Image Toolkit is an English-first, browser-based image tools website built for global SEO traffic and Google AdSense monetization.
 
 The MVP focuses on practical image utilities that process user-selected images locally in the browser whenever possible.
 
@@ -76,9 +76,15 @@ NEXT_PUBLIC_GA_ID=G-6CHJ6TTVVW
 
 Google Analytics is loaded with the official Next.js `Script` component and is enabled only in production when `NEXT_PUBLIC_GA_ID` is present. App Router page views are tracked on initial load and route changes.
 
+Google AdSense is loaded globally in production from `app/layout.tsx` with publisher client:
+
+```text
+ca-pub-4691862928355691
+```
+
 ## Privacy Note
 
-The current MVP processes selected images in the browser using Canvas-based utilities. Real Google AdSense code is not included yet; the project currently uses ad placeholder blocks.
+The current MVP processes selected images in the browser using Canvas-based utilities. Google AdSense is loaded in production, while in-page ad placements still use clean placeholder blocks until real ad units are configured.
 
 ## Deployment Plan
 
