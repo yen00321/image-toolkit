@@ -68,6 +68,14 @@ NEXT_PUBLIC_SITE_URL=https://imagetoolkitapp.com
 
 This value is used for sitemap and metadata URLs.
 
+Set the Google Analytics 4 Measurement ID in production:
+
+```bash
+NEXT_PUBLIC_GA_ID=G-6CHJ6TTVVW
+```
+
+Google Analytics is loaded with the official Next.js `Script` component and is enabled only in production when `NEXT_PUBLIC_GA_ID` is present. App Router page views are tracked on initial load and route changes.
+
 ## Privacy Note
 
 The current MVP processes selected images in the browser using Canvas-based utilities. Real Google AdSense code is not included yet; the project currently uses ad placeholder blocks.

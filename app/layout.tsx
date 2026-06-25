@@ -5,6 +5,7 @@ import { LanguageProvider } from "@/components/LanguageProvider";
 import { FooterTextClient } from "@/components/FooterTextClient";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
+        <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_ID} />
         <LanguageProvider>
           <SiteHeader />
           {children}
