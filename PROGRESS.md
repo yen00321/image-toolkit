@@ -80,6 +80,12 @@ Current expansion target: Phase 2, grow from 10 tools toward 60 tools without ch
   - `/bmp-to-png`
   - `/tiff-to-jpg`
   - `/tiff-to-png`
+- Phase 2 batch 3 added format conversion routes:
+  - `/gif-to-jpg`
+  - `/gif-to-png`
+  - `/png-to-ico`
+  - `/jpg-to-ico`
+  - `/webp-to-png`
 - Added reusable SEO sections for tool pages:
   - How to use
   - Related tools
@@ -136,6 +142,11 @@ Current expansion target: Phase 2, grow from 10 tools toward 60 tools without ch
 - BMP to PNG
 - TIFF to JPG
 - TIFF to PNG
+- GIF to JPG
+- GIF to PNG
+- PNG to ICO
+- JPG to ICO
+- WebP to PNG
 
 ### Social Resizers
 
@@ -163,11 +174,12 @@ Latest verification on 2026-06-25:
 
 Latest Phase 2 batch:
 
-- Batch 2 target: 5 format tools
+- Batch 3 target: 5 format tools
 - Completed batch 1: HEIC to JPG, HEIC to PNG, AVIF to JPG, AVIF to PNG, SVG to PNG
 - Completed batch 2: SVG to JPG, BMP to JPG, BMP to PNG, TIFF to JPG, TIFF to PNG
-- Current tool count: 20
-- Remaining Phase 1 format tools: GIF to JPG, GIF to PNG, PNG to ICO, JPG to ICO, ICO Converter, PDF to Images, Images to PDF, WebP to PNG
+- Completed batch 3: GIF to JPG, GIF to PNG, PNG to ICO, JPG to ICO, WebP to PNG
+- Current tool count: 25
+- Remaining Phase 1 format tools: ICO Converter, PDF to Images, Images to PDF
 
 Development server was started on:
 
@@ -193,7 +205,7 @@ Note: Browser automation could not inspect `127.0.0.1:3000` because the in-app b
 
 ## Recommended Next Steps
 
-1. Continue Phase 1 batch 3 with GIF to JPG, GIF to PNG, PNG to ICO, JPG to ICO, and WebP to PNG.
+1. Continue Phase 1 batch 4 with ICO Converter, PDF to Images, and Images to PDF.
 2. Add proper multilingual SEO routes and `hreflang`.
 3. Add long-form SEO content under each tool page.
 4. Improve mobile visual QA once browser access is available.
