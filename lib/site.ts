@@ -96,6 +96,38 @@ function editingFaqs(action: string) {
   ];
 }
 
+const socialSteps = (platform: string) => [
+  `Upload an image for ${platform}.`,
+  "Use the preset size already configured on the page.",
+  "Choose fit, cover, or stretch depending on the crop you want.",
+  "Download the resized image for posting.",
+];
+
+function socialFaqs(platform: string, size: string) {
+  return [
+    {
+      question: `What size does this ${platform} tool use?`,
+      answer: `This tool uses the ${size} preset for ${platform}.`,
+    },
+    {
+      question: "Will my image be stretched?",
+      answer: "Use fit or cover mode to keep the original image ratio. Stretch mode is available only if you want exact distortion.",
+    },
+    {
+      question: "Is the image uploaded to a server?",
+      answer: commonPrivacy,
+    },
+    {
+      question: "Can I download JPG, PNG, or WebP?",
+      answer: "Yes. The resize tools support common browser export formats including JPG, PNG, and WebP.",
+    },
+    {
+      question: "Can I use this on mobile?",
+      answer: "Yes. The page is responsive and works in modern mobile browsers.",
+    },
+  ];
+}
+
 export const tools: ToolInfo[] = [
   {
     slug: "image-resizer",
@@ -776,6 +808,81 @@ export const tools: ToolInfo[] = [
     howTo: commonEditSteps("invert colors"),
     relatedSlugs: ["grayscale-filter", "hue-adjust", "contrast-adjust"],
     faqs: editingFaqs("Invert colors for"),
+  },
+  {
+    slug: "pixelate-image",
+    name: "Pixelate Image",
+    shortName: "Pixelate",
+    description: "Apply a pixel art style effect to an image with adjustable block size.",
+    metaTitle: "Pixelate Image Online | Free Browser Pixel Art Effect",
+    metaDescription:
+      "Pixelate images online. Upload a photo, adjust pixel size, preview the effect, and download the result.",
+    keywords: ["pixelate image", "pixel art effect", "pixelate photo", "mosaic image"],
+    category: "edit",
+    href: "/pixelate-image",
+    howTo: commonEditSteps("pixelate effect"),
+    relatedSlugs: ["blur-image", "grayscale-filter", "invert-colors"],
+    faqs: editingFaqs("Pixelate"),
+  },
+  {
+    slug: "remove-exif-metadata",
+    name: "Remove EXIF Metadata",
+    shortName: "Remove EXIF",
+    description: "Remove EXIF metadata by redrawing an image in the browser and downloading a clean copy.",
+    metaTitle: "Remove EXIF Metadata Online | Free Browser Privacy Tool",
+    metaDescription:
+      "Remove EXIF metadata from images online. Upload a photo, strip metadata in your browser, and download a clean image.",
+    keywords: ["remove EXIF", "strip metadata", "remove photo metadata", "image privacy tool"],
+    category: "edit",
+    href: "/remove-exif-metadata",
+    howTo: commonEditSteps("metadata removal"),
+    relatedSlugs: ["image-compressor", "jpg-to-png", "png-to-jpg"],
+    faqs: editingFaqs("Remove EXIF metadata from"),
+  },
+  {
+    slug: "instagram-story-resizer",
+    name: "Instagram Story Resizer",
+    shortName: "Instagram Story",
+    description: "Resize images to the Instagram Story size of 1080x1920.",
+    metaTitle: "Instagram Story Resizer | Resize Image to 1080x1920",
+    metaDescription:
+      "Resize images for Instagram Stories online. Use the 1080x1920 preset and download a ready story image.",
+    keywords: ["Instagram Story resizer", "1080x1920 image", "resize for Instagram Story", "story size"],
+    category: "social",
+    href: "/instagram-story-resizer",
+    howTo: socialSteps("Instagram Story"),
+    relatedSlugs: ["instagram-resizer", "instagram-reel-cover", "instagram-profile-picture"],
+    faqs: socialFaqs("Instagram Story", "1080x1920"),
+  },
+  {
+    slug: "instagram-reel-cover",
+    name: "Instagram Reel Cover",
+    shortName: "Reel Cover",
+    description: "Resize images for Instagram Reel covers using a vertical 1080x1920 preset.",
+    metaTitle: "Instagram Reel Cover Resizer | Resize Image Online",
+    metaDescription:
+      "Create Instagram Reel cover images online. Resize to a vertical 1080x1920 preset and download the result.",
+    keywords: ["Instagram Reel cover", "Reel cover size", "resize Reel cover", "Instagram cover image"],
+    category: "social",
+    href: "/instagram-reel-cover",
+    howTo: socialSteps("Instagram Reel Cover"),
+    relatedSlugs: ["instagram-story-resizer", "instagram-profile-picture", "instagram-resizer"],
+    faqs: socialFaqs("Instagram Reel Cover", "1080x1920"),
+  },
+  {
+    slug: "instagram-profile-picture",
+    name: "Instagram Profile Picture",
+    shortName: "Instagram Profile",
+    description: "Resize images into a square 320x320 Instagram profile picture.",
+    metaTitle: "Instagram Profile Picture Resizer | Resize to 320x320",
+    metaDescription:
+      "Resize images for Instagram profile pictures online. Use a 320x320 square preset and download the result.",
+    keywords: ["Instagram profile picture", "Instagram avatar size", "resize profile photo", "320x320 image"],
+    category: "social",
+    href: "/instagram-profile-picture",
+    howTo: socialSteps("Instagram Profile Picture"),
+    relatedSlugs: ["crop-circle-image", "instagram-story-resizer", "instagram-resizer"],
+    faqs: socialFaqs("Instagram Profile Picture", "320x320"),
   },
   {
     slug: "instagram-resizer",

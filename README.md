@@ -54,6 +54,11 @@ The MVP focuses on practical image utilities that process user-selected images l
 - Grayscale Filter: `/grayscale-filter`
 - Sepia Filter: `/sepia-filter`
 - Invert Colors: `/invert-colors`
+- Pixelate Image: `/pixelate-image`
+- Remove EXIF Metadata: `/remove-exif-metadata`
+- Instagram Story Resizer: `/instagram-story-resizer`
+- Instagram Reel Cover: `/instagram-reel-cover`
+- Instagram Profile Picture: `/instagram-profile-picture`
 - Instagram Resizer: `/instagram-resizer`
 - TikTok Resizer: `/tiktok-resizer`
 - YouTube Thumbnail Resizer: `/youtube-thumbnail-resizer`
