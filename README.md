@@ -59,6 +59,11 @@ The MVP focuses on practical image utilities that process user-selected images l
 - Instagram Story Resizer: `/instagram-story-resizer`
 - Instagram Reel Cover: `/instagram-reel-cover`
 - Instagram Profile Picture: `/instagram-profile-picture`
+- Facebook Cover Photo: `/facebook-cover-photo`
+- Facebook Profile Picture: `/facebook-profile-picture`
+- Facebook Post Resizer: `/facebook-post-resizer`
+- YouTube Banner: `/youtube-banner`
+- YouTube Shorts Thumbnail: `/youtube-shorts-thumbnail`
 - Instagram Resizer: `/instagram-resizer`
 - TikTok Resizer: `/tiktok-resizer`
 - YouTube Thumbnail Resizer: `/youtube-thumbnail-resizer`
