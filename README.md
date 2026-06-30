@@ -64,6 +64,11 @@ The MVP focuses on practical image utilities that process user-selected images l
 - Facebook Post Resizer: `/facebook-post-resizer`
 - YouTube Banner: `/youtube-banner`
 - YouTube Shorts Thumbnail: `/youtube-shorts-thumbnail`
+- TikTok Profile Picture: `/tiktok-profile-picture`
+- LinkedIn Banner: `/linkedin-banner`
+- LinkedIn Profile Picture: `/linkedin-profile-picture`
+- X Header: `/x-header`
+- X Profile Picture: `/x-profile-picture`
 - Instagram Resizer: `/instagram-resizer`
 - TikTok Resizer: `/tiktok-resizer`
 - YouTube Thumbnail Resizer: `/youtube-thumbnail-resizer`
