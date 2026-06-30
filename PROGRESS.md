@@ -96,6 +96,12 @@ Current expansion target: Phase 2, grow from 10 tools toward 60 tools without ch
   - `/mirror-image`
   - `/resize-canvas`
   - `/crop-circle-image`
+- Phase 2 batch 6 added editing tools:
+  - `/add-watermark`
+  - `/blur-image`
+  - `/sharpen-image`
+  - `/brightness-adjust`
+  - `/contrast-adjust`
 - Added reusable SEO sections for tool pages:
   - How to use
   - Related tools
@@ -179,6 +185,11 @@ Current expansion target: Phase 2, grow from 10 tools toward 60 tools without ch
 - Mirror Image
 - Resize Canvas
 - Crop Circle Image
+- Add Watermark
+- Blur Image
+- Sharpen Image
+- Brightness Adjust
+- Contrast Adjust
 
 ## Verification
 
@@ -195,13 +206,14 @@ Latest verification on 2026-06-25:
 
 Latest Phase 2 batch:
 
-- Batch 5 target: 5 editing tools
+- Batch 6 target: 5 editing tools
 - Completed batch 1: HEIC to JPG, HEIC to PNG, AVIF to JPG, AVIF to PNG, SVG to PNG
 - Completed batch 2: SVG to JPG, BMP to JPG, BMP to PNG, TIFF to JPG, TIFF to PNG
 - Completed batch 3: GIF to JPG, GIF to PNG, PNG to ICO, JPG to ICO, WebP to PNG
 - Completed batch 4: ICO Converter, PDF to Images, Images to PDF
 - Completed batch 5: Rotate Image, Flip Image, Mirror Image, Resize Canvas, Crop Circle Image
-- Current tool count: 33
+- Completed batch 6: Add Watermark, Blur Image, Sharpen Image, Brightness Adjust, Contrast Adjust
+- Current tool count: 38
 - Remaining Phase 1 format tools: none
 
 Development server was started on:
@@ -228,7 +240,7 @@ Note: Browser automation could not inspect `127.0.0.1:3000` because the in-app b
 
 ## Recommended Next Steps
 
-1. Continue Phase 2 editing batch 6 with Add Watermark, Blur Image, Sharpen Image, Brightness Adjust, and Contrast Adjust.
+1. Continue Phase 2 editing batch 7 with Saturation Adjust, Hue Adjust, Grayscale Filter, Sepia Filter, and Invert Colors.
 2. Add proper multilingual SEO routes and `hreflang`.
 3. Add long-form SEO content under each tool page.
 4. Improve mobile visual QA once browser access is available.

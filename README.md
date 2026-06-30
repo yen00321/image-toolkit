@@ -44,6 +44,11 @@ The MVP focuses on practical image utilities that process user-selected images l
 - Mirror Image: `/mirror-image`
 - Resize Canvas: `/resize-canvas`
 - Crop Circle Image: `/crop-circle-image`
+- Add Watermark: `/add-watermark`
+- Blur Image: `/blur-image`
+- Sharpen Image: `/sharpen-image`
+- Brightness Adjust: `/brightness-adjust`
+- Contrast Adjust: `/contrast-adjust`
 - Instagram Resizer: `/instagram-resizer`
 - TikTok Resizer: `/tiktok-resizer`
 - YouTube Thumbnail Resizer: `/youtube-thumbnail-resizer`
