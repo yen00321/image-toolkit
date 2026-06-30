@@ -14,13 +14,55 @@ export type ToolInfo = {
   description: string;
   metaTitle: string;
   metaDescription: string;
+  keywords?: string[];
   category: ToolCategory;
   href: string;
+  howTo?: string[];
+  relatedSlugs?: string[];
   faqs: Array<{ question: string; answer: string }>;
 };
 
 const commonPrivacy =
   "Images are processed locally in your browser for this MVP. The selected file is not uploaded to our server before processing.";
+
+const formatPrivacy =
+  "The conversion runs in your browser with Canvas when your browser can decode the selected format. The image is not uploaded to our server.";
+
+const commonConvertSteps = (input: string, output: string) => [
+  `Upload your ${input} image from your device.`,
+  "Preview the image in the browser before exporting.",
+  output === "PNG" ? "Keep transparency when the browser supports it." : "Adjust quality if the output format supports compression.",
+  `Download the converted ${output} file.`,
+];
+
+function conversionFaqs(input: string, output: string) {
+  return [
+    {
+      question: `How do I convert ${input} to ${output}?`,
+      answer: `Upload a ${input} image, let the browser render it, then download the exported ${output} file.`,
+    },
+    {
+      question: `Are ${input} files uploaded to a server?`,
+      answer: formatPrivacy,
+    },
+    {
+      question: `Why does my ${input} file not open?`,
+      answer:
+        "Some formats depend on browser decoding support. If your browser cannot read the file, try an updated version of Chrome, Edge, Safari, or another modern browser.",
+    },
+    {
+      question: `Will converting to ${output} reduce quality?`,
+      answer:
+        output === "JPG"
+          ? "JPG uses lossy compression, so very low quality settings can reduce detail. Use a higher quality value for better results."
+          : "PNG is lossless for the exported pixels, though the result depends on how the browser decodes the original image.",
+    },
+    {
+      question: "Can I use this tool on mobile?",
+      answer: "Yes. The tool is responsive and works on mobile browsers that support the selected input format.",
+    },
+  ];
+}
 
 export const tools: ToolInfo[] = [
   {
@@ -197,6 +239,81 @@ export const tools: ToolInfo[] = [
         answer: commonPrivacy,
       },
     ],
+  },
+  {
+    slug: "heic-to-jpg",
+    name: "HEIC to JPG Converter",
+    shortName: "HEIC to JPG",
+    description: "Convert HEIC photos to compatible JPG images directly in your browser when supported.",
+    metaTitle: "HEIC to JPG Converter Online | Free Browser Image Tool",
+    metaDescription:
+      "Convert HEIC images to JPG online. Upload a HEIC photo, preview it in your browser, adjust quality, and download a JPG file.",
+    keywords: ["HEIC to JPG", "convert HEIC to JPG", "HEIC converter", "online image converter"],
+    category: "convert",
+    href: "/heic-to-jpg",
+    howTo: commonConvertSteps("HEIC", "JPG"),
+    relatedSlugs: ["heic-to-png", "avif-to-jpg", "webp-to-jpg"],
+    faqs: conversionFaqs("HEIC", "JPG"),
+  },
+  {
+    slug: "heic-to-png",
+    name: "HEIC to PNG Converter",
+    shortName: "HEIC to PNG",
+    description: "Convert HEIC photos to PNG images in the browser when your browser supports HEIC decoding.",
+    metaTitle: "HEIC to PNG Converter Online | Free Image Conversion",
+    metaDescription:
+      "Convert HEIC images to PNG online. Browser-based HEIC to PNG conversion with no server upload in the MVP.",
+    keywords: ["HEIC to PNG", "convert HEIC to PNG", "HEIC image converter", "browser image tool"],
+    category: "convert",
+    href: "/heic-to-png",
+    howTo: commonConvertSteps("HEIC", "PNG"),
+    relatedSlugs: ["heic-to-jpg", "avif-to-png", "png-to-jpg"],
+    faqs: conversionFaqs("HEIC", "PNG"),
+  },
+  {
+    slug: "avif-to-jpg",
+    name: "AVIF to JPG Converter",
+    shortName: "AVIF to JPG",
+    description: "Convert AVIF images to widely compatible JPG files with browser-based processing.",
+    metaTitle: "AVIF to JPG Converter Online | Free AVIF Image Tool",
+    metaDescription:
+      "Upload an AVIF image and convert it to JPG online. Preview the result, adjust quality, and download the JPG file.",
+    keywords: ["AVIF to JPG", "convert AVIF to JPG", "AVIF converter", "image converter"],
+    category: "convert",
+    href: "/avif-to-jpg",
+    howTo: commonConvertSteps("AVIF", "JPG"),
+    relatedSlugs: ["avif-to-png", "heic-to-jpg", "webp-to-jpg"],
+    faqs: conversionFaqs("AVIF", "JPG"),
+  },
+  {
+    slug: "avif-to-png",
+    name: "AVIF to PNG Converter",
+    shortName: "AVIF to PNG",
+    description: "Convert AVIF images to PNG files online while keeping browser-first image processing.",
+    metaTitle: "AVIF to PNG Converter Online | Free Browser Tool",
+    metaDescription:
+      "Convert AVIF to PNG online for free. Upload an AVIF image, process it locally in your browser, and download PNG output.",
+    keywords: ["AVIF to PNG", "convert AVIF to PNG", "AVIF image converter", "PNG converter"],
+    category: "convert",
+    href: "/avif-to-png",
+    howTo: commonConvertSteps("AVIF", "PNG"),
+    relatedSlugs: ["avif-to-jpg", "heic-to-png", "image-to-webp"],
+    faqs: conversionFaqs("AVIF", "PNG"),
+  },
+  {
+    slug: "svg-to-png",
+    name: "SVG to PNG Converter",
+    shortName: "SVG to PNG",
+    description: "Convert SVG files to PNG images in your browser and download a raster version.",
+    metaTitle: "SVG to PNG Converter Online | Free Browser SVG Tool",
+    metaDescription:
+      "Convert SVG to PNG online. Upload an SVG file, render it in the browser, and download a PNG image.",
+    keywords: ["SVG to PNG", "convert SVG to PNG", "SVG converter", "rasterize SVG"],
+    category: "convert",
+    href: "/svg-to-png",
+    howTo: commonConvertSteps("SVG", "PNG"),
+    relatedSlugs: ["jpg-to-png", "png-to-jpg", "image-to-webp"],
+    faqs: conversionFaqs("SVG", "PNG"),
   },
   {
     slug: "instagram-resizer",

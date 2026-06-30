@@ -6,6 +6,7 @@ export function toolMetadata(tool: ToolInfo): Metadata {
   return {
     title: tool.metaTitle,
     description: tool.metaDescription,
+    keywords: tool.keywords,
     alternates: {
       canonical: `${siteConfig.url}${tool.href}`,
     },
@@ -14,6 +15,11 @@ export function toolMetadata(tool: ToolInfo): Metadata {
       description: tool.metaDescription,
       url: `${siteConfig.url}${tool.href}`,
       type: "website",
+    },
+    twitter: {
+      card: "summary",
+      title: tool.metaTitle,
+      description: tool.metaDescription,
     },
   };
 }

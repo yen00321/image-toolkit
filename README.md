@@ -21,6 +21,11 @@ The MVP focuses on practical image utilities that process user-selected images l
 - PNG to JPG: `/png-to-jpg`
 - Image to WebP: `/image-to-webp`
 - WebP to JPG: `/webp-to-jpg`
+- HEIC to JPG: `/heic-to-jpg`
+- HEIC to PNG: `/heic-to-png`
+- AVIF to JPG: `/avif-to-jpg`
+- AVIF to PNG: `/avif-to-png`
+- SVG to PNG: `/svg-to-png`
 - Instagram Resizer: `/instagram-resizer`
 - TikTok Resizer: `/tiktok-resizer`
 - YouTube Thumbnail Resizer: `/youtube-thumbnail-resizer`
@@ -85,6 +90,10 @@ ca-pub-4691862928355691
 ## Privacy Note
 
 The current MVP processes selected images in the browser using Canvas-based utilities. Google AdSense is loaded in production, while in-page ad placements still use clean placeholder blocks until real ad units are configured.
+
+## Phase 2 Expansion
+
+The first Phase 2 batch adds five browser-first format tools: HEIC to JPG, HEIC to PNG, AVIF to JPG, AVIF to PNG, and SVG to PNG. HEIC support depends on the user's browser decoder support.
 
 ## Deployment Plan
 

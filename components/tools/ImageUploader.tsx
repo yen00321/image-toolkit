@@ -1,6 +1,7 @@
 "use client";
 
 import { Upload } from "lucide-react";
+import { useState } from "react";
 import { useI18n } from "@/components/LanguageProvider";
 import type { LoadedImage } from "@/lib/image-client";
 import { formatBytes, loadImageFile } from "@/lib/image-client";
@@ -13,11 +14,17 @@ type ImageUploaderProps = {
 
 export function ImageUploader({ image, onImage, accept = "image/png,image/jpeg,image/webp" }: ImageUploaderProps) {
   const { t } = useI18n();
+  const [error, setError] = useState<string | null>(null);
 
   async function handleFile(file?: File) {
     if (!file) return;
-    const loaded = await loadImageFile(file);
-    onImage(loaded);
+    setError(null);
+    try {
+      const loaded = await loadImageFile(file);
+      onImage(loaded);
+    } catch {
+      setError("This browser could not read the selected image format. Try an updated browser or another file.");
+    }
   }
 
   return (
@@ -42,6 +49,11 @@ export function ImageUploader({ image, onImage, accept = "image/png,image/jpeg,i
           <strong className="block text-ink">{image.file.name}</strong>
           {image.width} x {image.height} · {formatBytes(image.file.size)}
         </div>
+      ) : null}
+      {error ? (
+        <p className="mt-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+          {error}
+        </p>
       ) : null}
     </div>
   );
