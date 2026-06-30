@@ -72,8 +72,10 @@ export function ResizeTool({ presets = [], defaultWidth = 1200, defaultHeight = 
           image={image}
           onImage={(loaded) => {
             setImage(loaded);
-            setWidth(loaded.width);
-            setHeight(loaded.height);
+            if (!presets.length) {
+              setWidth(loaded.width);
+              setHeight(loaded.height);
+            }
           }}
         />
         <div className="mt-5 grid gap-4">
