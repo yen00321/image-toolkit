@@ -39,6 +39,11 @@ The MVP focuses on practical image utilities that process user-selected images l
 - ICO Converter: `/ico-converter`
 - PDF to Images: `/pdf-to-images`
 - Images to PDF: `/images-to-pdf`
+- Rotate Image: `/rotate-image`
+- Flip Image: `/flip-image`
+- Mirror Image: `/mirror-image`
+- Resize Canvas: `/resize-canvas`
+- Crop Circle Image: `/crop-circle-image`
 - Instagram Resizer: `/instagram-resizer`
 - TikTok Resizer: `/tiktok-resizer`
 - YouTube Thumbnail Resizer: `/youtube-thumbnail-resizer`
@@ -107,6 +112,8 @@ The current MVP processes selected images in the browser using Canvas-based util
 ## Phase 2 Expansion
 
 The Phase 2 expansion is adding browser-first tools in small batches. Format tools now include HEIC, AVIF, SVG, BMP, TIFF, GIF, ICO, WebP, and PDF utilities. HEIC and TIFF support depends on the user's browser decoder support.
+
+Editing tools are being added with shared Canvas-based components for consistent browser-only image processing.
 
 ## Deployment Plan
 

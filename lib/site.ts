@@ -5,7 +5,7 @@ export const siteConfig = {
     "Free browser-based image tools for resizing, compressing, cropping, and converting images online.",
 };
 
-export type ToolCategory = "resize" | "compress" | "crop" | "convert" | "social";
+export type ToolCategory = "resize" | "compress" | "crop" | "convert" | "edit" | "social";
 
 export type ToolInfo = {
   slug: string;
@@ -60,6 +60,38 @@ function conversionFaqs(input: string, output: string) {
     {
       question: "Can I use this tool on mobile?",
       answer: "Yes. The tool is responsive and works on mobile browsers that support the selected input format.",
+    },
+  ];
+}
+
+const commonEditSteps = (action: string) => [
+  "Upload an image from your device.",
+  `Apply the ${action} setting in the browser.`,
+  "Preview the edited image before exporting.",
+  "Download the finished image file.",
+];
+
+function editingFaqs(action: string) {
+  return [
+    {
+      question: `How do I ${action.toLowerCase()} an image?`,
+      answer: `Upload an image, adjust the ${action.toLowerCase()} settings, preview the result, and download the edited file.`,
+    },
+    {
+      question: "Is my image uploaded to a server?",
+      answer: commonPrivacy,
+    },
+    {
+      question: "Can I use this tool on mobile?",
+      answer: "Yes. The editor is responsive and works in modern mobile browsers.",
+    },
+    {
+      question: "Which image formats are supported?",
+      answer: "Most modern browsers support JPG, PNG, WebP, GIF still frames, and other formats they can decode.",
+    },
+    {
+      question: "Will editing reduce image quality?",
+      answer: "The tool exports a new image from Canvas. JPG output uses compression, while PNG keeps the exported pixels lossless.",
     },
   ];
 }
@@ -519,6 +551,81 @@ export const tools: ToolInfo[] = [
     ],
     relatedSlugs: ["pdf-to-images", "jpg-to-png", "image-compressor"],
     faqs: conversionFaqs("images", "PDF"),
+  },
+  {
+    slug: "rotate-image",
+    name: "Rotate Image",
+    shortName: "Rotate Image",
+    description: "Rotate images left, right, or 180 degrees directly in your browser.",
+    metaTitle: "Rotate Image Online | Free Browser Photo Rotation Tool",
+    metaDescription:
+      "Rotate images online for free. Upload a photo, rotate it left, right, or 180 degrees, preview the result, and download.",
+    keywords: ["rotate image", "rotate photo online", "image rotation tool", "turn image"],
+    category: "edit",
+    href: "/rotate-image",
+    howTo: commonEditSteps("rotation"),
+    relatedSlugs: ["flip-image", "mirror-image", "crop-image"],
+    faqs: editingFaqs("Rotate"),
+  },
+  {
+    slug: "flip-image",
+    name: "Flip Image",
+    shortName: "Flip Image",
+    description: "Flip an image horizontally or vertically with browser-based editing.",
+    metaTitle: "Flip Image Online | Free Horizontal and Vertical Flip Tool",
+    metaDescription:
+      "Flip images online in your browser. Upload an image, flip horizontally or vertically, preview, and download the result.",
+    keywords: ["flip image", "flip photo", "horizontal flip", "vertical flip"],
+    category: "edit",
+    href: "/flip-image",
+    howTo: commonEditSteps("flip"),
+    relatedSlugs: ["mirror-image", "rotate-image", "crop-image"],
+    faqs: editingFaqs("Flip"),
+  },
+  {
+    slug: "mirror-image",
+    name: "Mirror Image",
+    shortName: "Mirror Image",
+    description: "Create a mirrored version of an image by flipping it horizontally.",
+    metaTitle: "Mirror Image Online | Free Browser Mirror Photo Tool",
+    metaDescription:
+      "Mirror an image online for free. Upload a photo, create a horizontal mirror effect, preview, and download.",
+    keywords: ["mirror image", "mirror photo", "image mirror tool", "horizontal mirror"],
+    category: "edit",
+    href: "/mirror-image",
+    howTo: commonEditSteps("mirror"),
+    relatedSlugs: ["flip-image", "rotate-image", "crop-circle-image"],
+    faqs: editingFaqs("Mirror"),
+  },
+  {
+    slug: "resize-canvas",
+    name: "Resize Canvas",
+    shortName: "Resize Canvas",
+    description: "Change the canvas size around an image without stretching the original photo.",
+    metaTitle: "Resize Canvas Online | Free Image Canvas Size Tool",
+    metaDescription:
+      "Resize an image canvas online. Add space around a photo, set custom canvas width and height, and download the result.",
+    keywords: ["resize canvas", "change canvas size", "image canvas tool", "add image padding"],
+    category: "edit",
+    href: "/resize-canvas",
+    howTo: commonEditSteps("canvas resize"),
+    relatedSlugs: ["image-resizer", "crop-image", "instagram-resizer"],
+    faqs: editingFaqs("Resize canvas"),
+  },
+  {
+    slug: "crop-circle-image",
+    name: "Crop Circle Image",
+    shortName: "Circle Crop",
+    description: "Crop an image into a circle and download a transparent PNG result.",
+    metaTitle: "Crop Circle Image Online | Free Round Photo Crop Tool",
+    metaDescription:
+      "Crop images into circles online. Upload a photo, preview the round crop, and download a transparent PNG.",
+    keywords: ["crop circle image", "circle crop", "round image crop", "profile picture crop"],
+    category: "edit",
+    href: "/crop-circle-image",
+    howTo: commonEditSteps("circle crop"),
+    relatedSlugs: ["crop-image", "instagram-resizer", "resize-canvas"],
+    faqs: editingFaqs("Crop a circle"),
   },
   {
     slug: "instagram-resizer",
