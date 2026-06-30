@@ -36,6 +36,9 @@ The MVP focuses on practical image utilities that process user-selected images l
 - PNG to ICO: `/png-to-ico`
 - JPG to ICO: `/jpg-to-ico`
 - WebP to PNG: `/webp-to-png`
+- ICO Converter: `/ico-converter`
+- PDF to Images: `/pdf-to-images`
+- Images to PDF: `/images-to-pdf`
 - Instagram Resizer: `/instagram-resizer`
 - TikTok Resizer: `/tiktok-resizer`
 - YouTube Thumbnail Resizer: `/youtube-thumbnail-resizer`
@@ -103,7 +106,7 @@ The current MVP processes selected images in the browser using Canvas-based util
 
 ## Phase 2 Expansion
 
-The Phase 2 expansion is adding browser-first format tools in small batches. Completed batches include HEIC to JPG, HEIC to PNG, AVIF to JPG, AVIF to PNG, SVG to PNG, SVG to JPG, BMP to JPG, BMP to PNG, TIFF to JPG, TIFF to PNG, GIF to JPG, GIF to PNG, PNG to ICO, JPG to ICO, and WebP to PNG. HEIC and TIFF support depends on the user's browser decoder support.
+The Phase 2 expansion is adding browser-first tools in small batches. Format tools now include HEIC, AVIF, SVG, BMP, TIFF, GIF, ICO, WebP, and PDF utilities. HEIC and TIFF support depends on the user's browser decoder support.
 
 ## Deployment Plan
 
