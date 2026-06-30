@@ -49,6 +49,11 @@ The MVP focuses on practical image utilities that process user-selected images l
 - Sharpen Image: `/sharpen-image`
 - Brightness Adjust: `/brightness-adjust`
 - Contrast Adjust: `/contrast-adjust`
+- Saturation Adjust: `/saturation-adjust`
+- Hue Adjust: `/hue-adjust`
+- Grayscale Filter: `/grayscale-filter`
+- Sepia Filter: `/sepia-filter`
+- Invert Colors: `/invert-colors`
 - Instagram Resizer: `/instagram-resizer`
 - TikTok Resizer: `/tiktok-resizer`
 - YouTube Thumbnail Resizer: `/youtube-thumbnail-resizer`

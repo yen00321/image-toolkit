@@ -6,7 +6,7 @@ import { ImageUploader } from "@/components/tools/ImageUploader";
 import { PreviewCanvas } from "@/components/tools/PreviewCanvas";
 import { baseName, canvasToBlob, downloadBlob, type LoadedImage } from "@/lib/image-client";
 
-type AdjustMode = "blur" | "sharpen" | "brightness" | "contrast";
+type AdjustMode = "blur" | "sharpen" | "brightness" | "contrast" | "saturation" | "hue" | "grayscale" | "sepia" | "invert";
 
 type AdjustToolProps = {
   mode: AdjustMode;
@@ -17,12 +17,17 @@ const labels: Record<AdjustMode, string> = {
   sharpen: "Sharpen",
   brightness: "Brightness",
   contrast: "Contrast",
+  saturation: "Saturation",
+  hue: "Hue",
+  grayscale: "Grayscale",
+  sepia: "Sepia",
+  invert: "Invert",
 };
 
 export function AdjustTool({ mode }: AdjustToolProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [image, setImage] = useState<LoadedImage | null>(null);
-  const [amount, setAmount] = useState(mode === "blur" ? 4 : mode === "sharpen" ? 50 : 100);
+  const [amount, setAmount] = useState(defaultAmount(mode));
 
   useEffect(() => {
     if (!image || !canvasRef.current) return;
@@ -40,15 +45,9 @@ export function AdjustTool({ mode }: AdjustToolProps) {
       return;
     }
 
-    if (mode === "brightness") {
-      ctx.filter = `brightness(${amount}%)`;
-      ctx.drawImage(image.bitmap, 0, 0);
-      ctx.filter = "none";
-      return;
-    }
-
-    if (mode === "contrast") {
-      ctx.filter = `contrast(${amount}%)`;
+    const filter = filterForMode(mode, amount);
+    if (filter) {
+      ctx.filter = filter;
       ctx.drawImage(image.bitmap, 0, 0);
       ctx.filter = "none";
       return;
@@ -64,9 +63,9 @@ export function AdjustTool({ mode }: AdjustToolProps) {
     downloadBlob(blob, `${baseName(image.file.name)}-${mode}.png`);
   }
 
-  const min = mode === "blur" ? 0 : mode === "sharpen" ? 0 : 40;
-  const max = mode === "blur" ? 20 : mode === "sharpen" ? 100 : 180;
-  const suffix = mode === "blur" ? "px" : "%";
+  const min = minAmount(mode);
+  const max = maxAmount(mode);
+  const suffix = mode === "blur" ? "px" : mode === "hue" ? "deg" : "%";
 
   return (
     <div className="grid gap-6 xl:grid-cols-[390px_minmax(0,1fr)]">
@@ -99,6 +98,40 @@ export function AdjustTool({ mode }: AdjustToolProps) {
       <PreviewCanvas canvasRef={canvasRef} hasImage={Boolean(image)} label={`${labels[mode]} preview`} />
     </div>
   );
+}
+
+function defaultAmount(mode: AdjustMode) {
+  if (mode === "blur") return 4;
+  if (mode === "sharpen") return 50;
+  if (mode === "hue") return 90;
+  if (mode === "grayscale" || mode === "sepia" || mode === "invert") return 100;
+  return 100;
+}
+
+function minAmount(mode: AdjustMode) {
+  if (mode === "blur" || mode === "sharpen" || mode === "grayscale" || mode === "sepia" || mode === "invert") return 0;
+  if (mode === "hue") return 0;
+  return 40;
+}
+
+function maxAmount(mode: AdjustMode) {
+  if (mode === "blur") return 20;
+  if (mode === "sharpen") return 100;
+  if (mode === "hue") return 360;
+  if (mode === "saturation") return 200;
+  if (mode === "grayscale" || mode === "sepia" || mode === "invert") return 100;
+  return 180;
+}
+
+function filterForMode(mode: AdjustMode, amount: number) {
+  if (mode === "brightness") return `brightness(${amount}%)`;
+  if (mode === "contrast") return `contrast(${amount}%)`;
+  if (mode === "saturation") return `saturate(${amount}%)`;
+  if (mode === "hue") return `hue-rotate(${amount}deg)`;
+  if (mode === "grayscale") return `grayscale(${amount}%)`;
+  if (mode === "sepia") return `sepia(${amount}%)`;
+  if (mode === "invert") return `invert(${amount}%)`;
+  return null;
 }
 
 function sharpenCanvas(ctx: CanvasRenderingContext2D, width: number, height: number, strength: number) {
