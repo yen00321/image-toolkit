@@ -26,6 +26,11 @@ The MVP focuses on practical image utilities that process user-selected images l
 - AVIF to JPG: `/avif-to-jpg`
 - AVIF to PNG: `/avif-to-png`
 - SVG to PNG: `/svg-to-png`
+- SVG to JPG: `/svg-to-jpg`
+- BMP to JPG: `/bmp-to-jpg`
+- BMP to PNG: `/bmp-to-png`
+- TIFF to JPG: `/tiff-to-jpg`
+- TIFF to PNG: `/tiff-to-png`
 - Instagram Resizer: `/instagram-resizer`
 - TikTok Resizer: `/tiktok-resizer`
 - YouTube Thumbnail Resizer: `/youtube-thumbnail-resizer`
@@ -93,7 +98,7 @@ The current MVP processes selected images in the browser using Canvas-based util
 
 ## Phase 2 Expansion
 
-The first Phase 2 batch adds five browser-first format tools: HEIC to JPG, HEIC to PNG, AVIF to JPG, AVIF to PNG, and SVG to PNG. HEIC support depends on the user's browser decoder support.
+The Phase 2 expansion is adding browser-first format tools in small batches. Completed batches include HEIC to JPG, HEIC to PNG, AVIF to JPG, AVIF to PNG, SVG to PNG, SVG to JPG, BMP to JPG, BMP to PNG, TIFF to JPG, and TIFF to PNG. HEIC and TIFF support depends on the user's browser decoder support.
 
 ## Deployment Plan
 
