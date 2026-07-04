@@ -160,6 +160,10 @@ export function getCategoryTools(category: ToolCategoryGroup) {
   return getToolsBySlugs(category.toolSlugs);
 }
 
+export function getToolCategoryGroup(id: string) {
+  return toolCategoryGroups.find((category) => category.id === id);
+}
+
 export function searchTools(query: string) {
   const normalized = query.trim().toLowerCase();
 

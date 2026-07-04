@@ -149,6 +149,20 @@ Current V2 direction: pause new tool creation and improve the existing 60-tool w
   - Added homepage FAQ content.
   - Added homepage FAQ JSON-LD and WebApplication JSON-LD.
   - Added reusable category data in `lib/tool-categories.ts`.
+- V2 Phase 2 completed:
+  - Added category landing pages:
+    - `/tools/convert`
+    - `/tools/resize`
+    - `/tools/compress`
+    - `/tools/edit`
+    - `/tools/social-media`
+    - `/tools/pdf`
+    - `/tools/metadata`
+  - Added 300+ words of English introduction content to each category page.
+  - Added category tool lists and related category links.
+  - Added 5 FAQ items to each category page.
+  - Added SEO metadata, canonical URLs, Open Graph, Twitter cards, Breadcrumb schema, and FAQ schema.
+  - Added category pages to `app/sitemap.ts`.
 
 ## Tool MVP Features
 
@@ -286,7 +300,7 @@ Latest V2 verification on 2026-07-04:
 
 - `npm.cmd run typecheck`
 - `npm.cmd run build`
-- Next generated 70 static pages successfully.
+- Next generated 77 static pages successfully.
 - Build note: Next.js still reports non-blocking `<img>` warnings in PDF preview components. These are existing local blob previews and do not block production builds.
 
 Latest Phase 2 batch:
@@ -309,20 +323,20 @@ Latest Phase 2 batch:
 
 Latest V2 phase:
 
-- Phase 1: homepage V2 UI + search + category data structure
+- Phase 2: category landing pages
 - Status: complete
 
 Next V2 phase:
 
-- Phase 2: create category pages:
-  - `/tools/convert`
-  - `/tools/resize`
-  - `/tools/compress`
-  - `/tools/edit`
-  - `/tools/social-media`
-  - `/tools/pdf`
-  - `/tools/metadata`
-- Each category page needs 300+ words of English content, tool lists, related categories, 5 FAQs, SEO metadata, Breadcrumb schema, and FAQ schema.
+- Phase 3: upgrade existing tool pages with deeper content templates:
+  - What is this tool?
+  - How to use this tool
+  - Key features
+  - Supported formats
+  - Privacy note
+  - Related tools
+  - 5 FAQ items
+  - FAQ, Breadcrumb, and WebApplication JSON-LD
 
 Development server was started on:
 

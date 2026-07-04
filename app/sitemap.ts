@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig, tools } from "@/lib/site";
+import { toolCategoryGroups } from "@/lib/tool-categories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -17,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "yearly" as const,
       priority: 0.5,
+    })),
+    ...toolCategoryGroups.map((category) => ({
+      url: `${siteConfig.url}${category.href}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
     })),
     ...tools.map((tool) => ({
       url: `${siteConfig.url}${tool.href}`,

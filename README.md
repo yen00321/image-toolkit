@@ -150,9 +150,22 @@ Phase 1 completed:
 - Added shared category data in `lib/tool-categories.ts` for upcoming category pages.
 - Added homepage FAQ and WebApplication JSON-LD.
 
+Phase 2 completed:
+
+- Added category landing pages:
+  - `/tools/convert`
+  - `/tools/resize`
+  - `/tools/compress`
+  - `/tools/edit`
+  - `/tools/social-media`
+  - `/tools/pdf`
+  - `/tools/metadata`
+- Each category page includes 300+ words of English introduction content.
+- Added category tool lists, related categories, FAQ sections, SEO metadata, canonical URLs, Open Graph, Twitter cards, Breadcrumb schema, and FAQ schema.
+- Added category pages to `app/sitemap.ts`.
+
 Next V2 phases:
 
-- Phase 2: Add category landing pages under `/tools/*`.
 - Phase 3: Upgrade existing tool pages with deeper explanatory content and structured data.
 - Phase 4: Add guides under `/guides`.
 - Phase 5: Rebuild footer navigation and verify sitemap/schema coverage.
