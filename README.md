@@ -179,10 +179,38 @@ Phase 3 completed:
 - Increased related tools from 3 to 4 items per tool page.
 - Updated FAQ JSON-LD to use the enriched FAQ set.
 
-Next V2 phases:
+## ImageToolkit V3 Optimization
 
-- Phase 4: Add guides under `/guides`.
-- Phase 5: Rebuild footer navigation and verify sitemap/schema coverage.
+V3 focuses on improving homepage conversion, tool discoverability, guide navigation, card UX, and AdSense readiness without adding new tools.
+
+Completed V3 updates:
+
+- Improved the homepage hero with stronger CTAs:
+  - Upload Image
+  - Search Tools
+- Added a more prominent Popular Tools section directly below the hero.
+- Updated Popular Tools to feature 8 high-intent tools.
+- Updated Recently Added to pull automatically from the latest tools in the shared tools data.
+- Improved search behavior:
+  - Searches tool name, slug, category, description, and keywords.
+  - Shows up to 8 suggestions.
+  - Supports Enter to open the first result.
+  - Shows a clear no-results message.
+- Upgraded tool cards with icons, category labels, Free badges, stronger visual hierarchy, hover motion, and Open Tool CTAs.
+- Added Guides to the main navigation and created a `/guides` index page.
+- Added guide filtering, reading time, related tools, SEO metadata, Breadcrumb schema, and CollectionPage schema.
+- Rebuilt the footer with product-style sections for Popular Tools, Categories, Resources, and Company links.
+- Added deeper homepage content sections for:
+  - Why use ImageToolkit?
+  - Browser-based privacy
+  - Supported image formats
+  - Common use cases
+
+Future content roadmap:
+
+- Add full long-form article pages for each guide listed on `/guides`.
+- Add Article schema, FAQ schema, and internal links to each individual guide article.
+- Continue improving AdSense policy-friendly content depth before requesting another review.
 
 ## Phase 2 Expansion
 

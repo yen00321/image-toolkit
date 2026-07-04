@@ -4,7 +4,7 @@ import { toolCategoryGroups } from "@/lib/tool-categories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticPages = ["/about", "/privacy-policy", "/terms", "/contact"];
+  const staticPages = ["/about", "/privacy-policy", "/terms", "/contact", "/guides"];
 
   return [
     {

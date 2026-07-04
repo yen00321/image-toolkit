@@ -4,13 +4,13 @@ Last updated: 2026-07-04
 
 ## Current Goal
 
-Upgrade ImageToolkit V2 for stronger content quality, UX, SEO, and Google AdSense review readiness after a low-value-content rejection.
+Upgrade ImageToolkit V3 for stronger homepage conversion, tool discoverability, content value, UX, SEO, and Google AdSense review readiness after a low-value-content rejection.
 
 Site name: Image Toolkit
 
 Canonical production URL: `https://www.imagetoolkitapp.com`
 
-Current V2 direction: pause new tool creation and improve the existing 60-tool website with category navigation, deeper content, better internal linking, structured data, guides, and a stronger footer.
+Current direction: pause new tool creation and improve the existing 60-tool website with clearer homepage CTAs, better tool cards, stronger navigation, guide resources, deeper homepage content, and AdSense-friendly UX.
 
 ## Tech Stack
 
@@ -170,6 +170,21 @@ Current V2 direction: pause new tool creation and improve the existing 60-tool w
   - Kept How to use, Related tools, FAQ, FAQ schema, Breadcrumb schema, and WebApplication schema active.
   - Ensured each tool page has at least 5 FAQ entries by merging shared fallback FAQ content.
   - Increased related tools from 3 to 4 per page.
+- V3 optimization completed:
+  - Improved homepage hero with Upload Image and Search Tools CTAs.
+  - Upload Image links to `/image-resizer`.
+  - Search Tools focuses the homepage search box.
+  - Moved a stronger Popular Tools section directly below the hero.
+  - Popular Tools now shows Image Resizer, Image Compressor, JPG to PNG, PNG to JPG, WebP to JPG, Image to WebP, Crop Image, and YouTube Thumbnail Resizer.
+  - Recently Added now uses the latest tools from shared tool data instead of hardcoded page content.
+  - Search now checks tool name, slug, category, description, and keywords.
+  - Search suggestions are limited to 8 results and Enter opens the first result.
+  - Tool cards now include icons, category labels, Free badges, hover motion, stronger visual hierarchy, and Open Tool CTAs.
+  - Main navigation now includes Tools, Categories, Guides, About, Privacy, and Contact.
+  - Added `/guides` with guide filtering, reading time, related tools, SEO metadata, Breadcrumb schema, and CollectionPage schema.
+  - Rebuilt footer with ImageToolkit intro, Popular Tools, Categories, Resources, and Company sections.
+  - Added deeper homepage content sections for Why use ImageToolkit, Browser-based privacy, Supported image formats, and Common use cases.
+  - Added `/guides` to sitemap.
 
 ## Tool MVP Features
 
@@ -310,6 +325,23 @@ Latest V2 verification on 2026-07-04:
 - Next generated 77 static pages successfully.
 - Build note: Next.js still reports non-blocking `<img>` warnings in PDF preview components. These are existing local blob previews and do not block production builds.
 
+Latest V3 verification on 2026-07-04:
+
+- `npm.cmd run typecheck`
+- `npm.cmd run build`
+- Next generated 78 static pages successfully, including `/guides`.
+- Local production spot checks returned 200 for:
+  - `/`
+  - `/guides`
+  - `/image-resizer`
+  - `/sitemap.xml`
+  - `/robots.txt`
+- Confirmed AdSense publisher script remains in `app/layout.tsx`.
+- Confirmed GA4 loader remains in `app/layout.tsx` and still uses `NEXT_PUBLIC_GA_ID`.
+- Confirmed sitemap includes `/guides`.
+- Confirmed robots points to `https://www.imagetoolkitapp.com/sitemap.xml`.
+- Build note: Next.js still reports non-blocking `<img>` warnings in PDF preview components.
+
 Latest Phase 2 batch:
 
 - Batch 11 target: 2 social tools
@@ -330,12 +362,13 @@ Latest Phase 2 batch:
 
 Latest V2 phase:
 
-- Phase 3: tool page content template upgrade
+- V3 homepage, navigation, guide index, footer, search, and card UX optimization
 - Status: complete
 
-Next V2 phase:
+Next phase:
 
-- Phase 4: add `/guides` and 10 long-form English guide articles with article schema, FAQ, breadcrumb schema, table of contents, and internal links to related tools.
+- Add full long-form article pages for each guide listed on `/guides`.
+- Add Article schema, FAQ schema, Breadcrumb schema, table of contents, and internal links to related tools for each guide article.
 
 Development server was started on:
 

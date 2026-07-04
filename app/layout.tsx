@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { LanguageProvider } from "@/components/LanguageProvider";
-import { FooterTextClient } from "@/components/FooterTextClient";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { GoogleAnalyticsPageView } from "@/components/GoogleAnalytics";
@@ -70,23 +69,57 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <SiteHeader />
           {children}
           <footer className="border-t border-line bg-white">
-            <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-sm text-muted sm:px-6 lg:px-8">
-              <strong className="text-ink">Image Toolkit</strong>
-              <FooterText />
-              <nav className="flex flex-wrap gap-x-5 gap-y-2 font-semibold" aria-label="Footer">
-                <Link href="/about" className="hover:text-brand">
-                  About
-                </Link>
-                <Link href="/privacy-policy" className="hover:text-brand">
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" className="hover:text-brand">
-                  Terms
-                </Link>
-                <Link href="/contact" className="hover:text-brand">
-                  Contact
-                </Link>
-              </nav>
+            <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 text-sm text-muted sm:px-6 lg:grid-cols-[1.2fr_repeat(4,1fr)] lg:px-8">
+              <div>
+                <strong className="text-lg text-ink">ImageToolkit</strong>
+                <p className="mt-3 leading-6">
+                  Free browser-based image tools for resizing, compressing, converting, cropping, editing, and preparing
+                  images for websites, social media, documents, and everyday publishing workflows.
+                </p>
+              </div>
+              <FooterColumn
+                title="Popular Tools"
+                links={[
+                  ["/image-resizer", "Image Resizer"],
+                  ["/image-compressor", "Image Compressor"],
+                  ["/jpg-to-png", "JPG to PNG"],
+                  ["/png-to-jpg", "PNG to JPG"],
+                  ["/webp-to-jpg", "WebP to JPG"],
+                ]}
+              />
+              <FooterColumn
+                title="Categories"
+                links={[
+                  ["/tools/convert", "Convert"],
+                  ["/tools/resize", "Resize"],
+                  ["/tools/compress", "Compress"],
+                  ["/tools/edit", "Edit"],
+                  ["/tools/social-media", "Social Media"],
+                  ["/tools/pdf", "PDF"],
+                ]}
+              />
+              <FooterColumn
+                title="Resources"
+                links={[
+                  ["/guides", "Guides"],
+                  ["/#faq", "FAQ"],
+                  ["/sitemap.xml", "Sitemap"],
+                ]}
+              />
+              <FooterColumn
+                title="Company"
+                links={[
+                  ["/about", "About"],
+                  ["/privacy-policy", "Privacy Policy"],
+                  ["/terms", "Terms"],
+                  ["/contact", "Contact"],
+                ]}
+              />
+            </div>
+            <div className="border-t border-line">
+              <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-muted sm:px-6 lg:px-8">
+                <p>Canonical production URL: https://www.imagetoolkitapp.com</p>
+              </div>
             </div>
           </footer>
         </LanguageProvider>
@@ -95,6 +128,19 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   );
 }
 
-function FooterText() {
-  return <FooterTextClient />;
+function FooterColumn({ title, links }: { title: string; links: Array<[string, string]> }) {
+  return (
+    <nav aria-label={title}>
+      <h2 className="font-extrabold text-ink">{title}</h2>
+      <ul className="mt-3 grid gap-2">
+        {links.map(([href, label]) => (
+          <li key={href}>
+            <Link href={href} className="font-semibold hover:text-brand">
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
 }

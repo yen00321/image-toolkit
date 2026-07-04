@@ -139,21 +139,18 @@ export const popularToolSlugs = [
   "image-compressor",
   "jpg-to-png",
   "png-to-jpg",
+  "webp-to-jpg",
   "image-to-webp",
   "crop-image",
-];
-
-export const recentlyAddedToolSlugs = [
-  "discord-avatar-resizer",
-  "pinterest-pin-resizer",
-  "x-profile-picture",
-  "x-header",
-  "linkedin-profile-picture",
-  "linkedin-banner",
+  "youtube-thumbnail-resizer",
 ];
 
 export function getToolsBySlugs(slugs: string[]) {
   return slugs.map((slug) => tools.find((tool) => tool.slug === slug)).filter(Boolean) as ToolInfo[];
+}
+
+export function getRecentlyAddedTools(limit = 8) {
+  return tools.slice(-limit).reverse();
 }
 
 export function getCategoryTools(category: ToolCategoryGroup) {
@@ -176,6 +173,7 @@ export function searchTools(query: string) {
     const haystack = [
       tool.name,
       tool.shortName,
+      tool.slug,
       tool.description,
       tool.category,
       category?.name,
