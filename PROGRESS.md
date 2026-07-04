@@ -19,7 +19,7 @@ Current direction: pause new tool creation and keep improving the existing 60-to
 - TypeScript
 - Tailwind CSS
 - Browser-first image processing with Canvas
-- Production-only Google AdSense loader with ad placeholder blocks
+- Production-only Google AdSense loader with responsive in-page ad components
 
 ## Completed
 
@@ -31,7 +31,7 @@ Current direction: pause new tool creation and keep improving the existing 60-to
   - `app/sitemap.ts`
 - Unified SEO URLs to the canonical `www` domain:
   - `https://www.imagetoolkitapp.com`
-- Added global layout, header, footer, homepage, cards, FAQ, and ad placeholders.
+- Added global layout, header, footer, homepage, cards, FAQ, and responsive ad component structure.
 - Added language switcher with client-side UI translation.
 - Added AdSense-readiness static pages:
   - `/about`
@@ -196,6 +196,16 @@ Current direction: pause new tool creation and keep improving the existing 60-to
   - Why use ImageToolkit now shows only 3 concise points.
   - Homepage FAQ now shows 3 questions.
   - Footer was simplified to essential product, tool, category, and site links.
+- Ad Placement optimization completed:
+  - Added `ResponsiveAd`, `InArticleAd`, `ToolPageAd`, and `FooterAd` in `components/ads/AdUnits.tsx`.
+  - Ad components are production-only and render only when matching ad slot environment variables are configured.
+  - Removed the old visual ad reservation component and visible reservation UI.
+  - Homepage now has a responsive ad below the hero/search area and a footer ad before the site footer.
+  - Tool pages now use in-content ads after the main tool UI, after the privacy section, and before Related Tools.
+  - Removed tool-page sidebar advertising.
+  - Category pages now include a responsive ad above the tool list and one after each 12 tools for long categories.
+  - Static pages now use the responsive ad component after page intros.
+  - Privacy policy advertising copy was updated to describe real advertising areas instead of placeholders.
 
 ## Tool MVP Features
 
@@ -361,6 +371,16 @@ Latest V3.5 verification on 2026-07-04:
 - Build note: Next.js still reports non-blocking `<img>` warnings in PDF preview components.
 - No changes were made to AdSense script, GA4 script, canonical domain settings, robots.txt, sitemap structure, or existing tool URLs.
 
+Latest Ad Placement verification on 2026-07-04:
+
+- `npm.cmd run typecheck`
+- `npm.cmd run build`
+- Next generated 78 static pages successfully.
+- Confirmed global AdSense publisher script remains in `app/layout.tsx`.
+- Confirmed GA4 loader remains in `app/layout.tsx`.
+- Confirmed no changes to canonical domain settings, robots.txt, sitemap structure, www redirect, or existing tool URLs.
+- Build note: Next.js still reports non-blocking `<img>` warnings in PDF preview components.
+
 Latest Phase 2 batch:
 
 - Batch 11 target: 2 social tools
@@ -379,9 +399,9 @@ Latest Phase 2 batch:
 - 60-tool milestone: complete
 - Remaining Phase 1 format tools: none
 
-Latest V2 phase:
+Latest phase:
 
-- V3.5 homepage UI cleanup
+- Ad Placement optimization
 - Status: complete
 
 Next phase:
@@ -406,7 +426,7 @@ Note: Browser automation could not inspect `127.0.0.1:3000` because the in-app b
   - `/vi/image-resizer`
   - `/id/image-resizer`
 - Google AdSense global loader has been added for production.
-- Ad placeholders are still present and ready to replace with real ad units later.
+- Responsive ad components are present and ready for real ad slot IDs.
 - Static AdSense-readiness pages are present. Contact email is currently `hello@imagetoolkitapp.com`.
 - User images are intended to stay in the browser and not upload to a server.
 - `npm install` reported 2 moderate vulnerabilities. Do not use `npm audit fix --force` blindly because it may break dependency compatibility.
@@ -418,7 +438,7 @@ Note: Browser automation could not inspect `127.0.0.1:3000` because the in-app b
 3. Add long-form SEO content under each tool page.
 4. Improve mobile visual QA once browser access is available.
 5. Add image test fixtures and automated component checks.
-6. Replace ad placeholder blocks with real AdSense ad units after approval/configuration.
+6. Add real AdSense ad slot IDs after approval/configuration.
 7. Add AdSense policy-friendly content depth to each tool page.
 
 ## Important Files

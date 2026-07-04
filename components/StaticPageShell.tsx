@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
+import { ResponsiveAd } from "@/components/ads/AdUnits";
 
 type StaticPageShellProps = {
   eyebrow?: string;
@@ -16,7 +16,7 @@ export function StaticPageShell({ eyebrow = "Image Toolkit", title, description,
         <h1 className="mt-2 text-4xl font-extrabold tracking-normal text-ink sm:text-5xl">{title}</h1>
         <p className="mt-4 text-lg leading-8 text-muted">{description}</p>
       </div>
-      <AdPlaceholder className="mt-8" />
+      <ResponsiveAd />
       <article className="prose prose-slate mt-8 max-w-none rounded-lg border border-line bg-white p-6 shadow-soft prose-headings:text-ink prose-p:text-muted prose-li:text-muted sm:p-8">
         {children}
       </article>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
+import { ResponsiveAd } from "@/components/ads/AdUnits";
 import { ToolCard } from "@/components/ToolCard";
 import { siteConfig } from "@/lib/site";
 import {
@@ -410,7 +410,6 @@ export default async function ToolCategoryPage({ params }: CategoryPageProps) {
           </h1>
           <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">{category.description}</p>
         </div>
-        <AdPlaceholder className="min-h-52" />
       </section>
 
       <section className="mt-10 rounded-lg border border-line bg-white p-6 shadow-soft">
@@ -432,9 +431,15 @@ export default async function ToolCategoryPage({ params }: CategoryPageProps) {
             Choose a tool below, upload your file, preview the result, and download a new image or document output.
           </p>
         </div>
+        <ResponsiveAd />
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {categoryTools.map((tool) => (
-            <ToolCard key={tool.slug} tool={tool} />
+          {categoryTools.map((tool, index) => (
+            <div key={tool.slug} className="contents">
+              <ToolCard tool={tool} />
+              {(index + 1) % 12 === 0 && index + 1 < categoryTools.length ? (
+                <ResponsiveAd className="sm:col-span-2 lg:col-span-3" />
+              ) : null}
+            </div>
           ))}
         </div>
       </section>

@@ -4,7 +4,7 @@ import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight, CheckCircle2, Search } from "lucide-react";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
+import { FooterAd, ResponsiveAd } from "@/components/ads/AdUnits";
 import { ToolCard } from "@/components/ToolCard";
 import {
   getCategoryTools,
@@ -120,9 +120,7 @@ export function HomeContent() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <AdPlaceholder />
-      </section>
+      <ResponsiveAd className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" />
 
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -210,6 +208,8 @@ export function HomeContent() {
           ))}
         </div>
       </section>
+
+      <FooterAd className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" />
     </main>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { AdPlaceholder } from "@/components/AdPlaceholder";
+import { ResponsiveAd, ToolPageAd } from "@/components/ads/AdUnits";
 import { Faq } from "@/components/Faq";
 import { useI18n } from "@/components/LanguageProvider";
 import { siteConfig, tools, type ToolInfo } from "@/lib/site";
@@ -93,11 +93,10 @@ export function ToolPageShell({ tool, children }: ToolPageShellProps) {
         <h1 className="mt-2 text-4xl font-extrabold tracking-normal text-ink sm:text-5xl">{text.name}</h1>
         <p className="mt-4 text-lg leading-8 text-muted">{text.description}</p>
       </div>
-      <AdPlaceholder className="mt-7" />
-      <div className="mt-7 grid gap-6 lg:grid-cols-[minmax(0,1fr)_220px]">
-        <div>{children}</div>
-        <AdPlaceholder className="min-h-96 lg:sticky lg:top-24" label={t("sidebarAd")} />
+      <div className="mt-7">
+        {children}
       </div>
+      <ToolPageAd />
       <section className="mt-10 grid gap-5 rounded-lg border border-line bg-white p-6 shadow-soft">
         <div>
           <h2 className="text-2xl font-extrabold text-ink">What is this tool?</h2>
@@ -149,6 +148,8 @@ export function ToolPageShell({ tool, children }: ToolPageShellProps) {
           files may require more device memory, but the product direction remains browser-based and privacy-friendly.
         </p>
       </section>
+      <ToolPageAd />
+      <ResponsiveAd />
       <section className="mt-10">
         <h2 className="text-2xl font-extrabold text-ink">Related image tools</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -166,7 +167,6 @@ export function ToolPageShell({ tool, children }: ToolPageShellProps) {
         </div>
       </section>
       <Faq items={enrichedFaqs} />
-      <AdPlaceholder className="mt-10" label={t("articleAd")} />
     </main>
   );
 }

@@ -41,9 +41,8 @@ export default function PrivacyPolicyPage() {
 
       <h2>Cookies and Advertising</h2>
       <p>
-        The current website includes advertising placeholder areas only. If Google AdSense or another advertising
-        provider is added later, third-party vendors may use cookies, device identifiers, or similar technologies to
-        serve and measure ads according to their own policies.
+        The website may include Google AdSense advertising areas. Third-party vendors may use cookies, device
+        identifiers, or similar technologies to serve and measure ads according to their own policies.
       </p>
 
       <h2>Analytics</h2>

@@ -91,7 +91,7 @@ export const commonTranslations: Record<LanguageCode, Record<CommonKey, string>>
     cropPreview: "Crop preview",
     cropEmptyTitle: "Crop area appears here",
     cropEmptyText: "Upload an image to start cropping.",
-    footerText: "Free browser-first image tools. Ad placeholders are reserved for future Google AdSense integration.",
+    footerText: "Free browser-first image tools with privacy-friendly local processing and responsible advertising areas.",
   },
   zh: {
     start: "開始使用",

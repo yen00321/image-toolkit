@@ -132,9 +132,36 @@ Google AdSense is loaded globally in production from `app/layout.tsx` with publi
 ca-pub-4691862928355691
 ```
 
+Ad placement components are production-only and render only when a matching ad slot is configured:
+
+```bash
+NEXT_PUBLIC_ADSENSE_RESPONSIVE_SLOT=
+NEXT_PUBLIC_ADSENSE_IN_ARTICLE_SLOT=
+NEXT_PUBLIC_ADSENSE_TOOL_PAGE_SLOT=
+NEXT_PUBLIC_ADSENSE_FOOTER_SLOT=
+```
+
 ## Privacy Note
 
-The current MVP processes selected images in the browser using Canvas-based utilities. Google AdSense is loaded in production, while in-page ad placements still use clean placeholder blocks until real ad units are configured.
+The current MVP processes selected images in the browser using Canvas-based utilities. Google AdSense is loaded in production, and in-page ad components are prepared to render responsive ads once real ad slots are configured.
+
+## Ad Placement
+
+AdSense placement components live in `components/ads/AdUnits.tsx`:
+
+- `ResponsiveAd`
+- `InArticleAd`
+- `ToolPageAd`
+- `FooterAd`
+
+Current placements:
+
+- Homepage: one responsive banner below the hero/search area and one footer ad before the site footer.
+- Tool pages: tool-page ad placements after the main tool UI and after the privacy section, plus a responsive ad before related tools.
+- Category pages: one responsive ad above the tool list and one inserted after each 12 tools when a category is long enough.
+- Static pages: one responsive ad area after the page intro.
+
+No sidebar ads are used.
 
 ## ImageToolkit V2 Upgrade
 
