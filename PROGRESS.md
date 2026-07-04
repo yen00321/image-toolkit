@@ -163,6 +163,13 @@ Current V2 direction: pause new tool creation and improve the existing 60-tool w
   - Added 5 FAQ items to each category page.
   - Added SEO metadata, canonical URLs, Open Graph, Twitter cards, Breadcrumb schema, and FAQ schema.
   - Added category pages to `app/sitemap.ts`.
+- V2 Phase 3 completed:
+  - Upgraded the shared `ToolPageShell` used by all 60 existing tool pages.
+  - Added "What is this tool?" explanatory content to every tool page.
+  - Added Key features, Supported formats, and Privacy note sections.
+  - Kept How to use, Related tools, FAQ, FAQ schema, Breadcrumb schema, and WebApplication schema active.
+  - Ensured each tool page has at least 5 FAQ entries by merging shared fallback FAQ content.
+  - Increased related tools from 3 to 4 per page.
 
 ## Tool MVP Features
 
@@ -323,20 +330,12 @@ Latest Phase 2 batch:
 
 Latest V2 phase:
 
-- Phase 2: category landing pages
+- Phase 3: tool page content template upgrade
 - Status: complete
 
 Next V2 phase:
 
-- Phase 3: upgrade existing tool pages with deeper content templates:
-  - What is this tool?
-  - How to use this tool
-  - Key features
-  - Supported formats
-  - Privacy note
-  - Related tools
-  - 5 FAQ items
-  - FAQ, Breadcrumb, and WebApplication JSON-LD
+- Phase 4: add `/guides` and 10 long-form English guide articles with article schema, FAQ, breadcrumb schema, table of contents, and internal links to related tools.
 
 Development server was started on:
 

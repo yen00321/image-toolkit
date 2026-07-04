@@ -164,9 +164,23 @@ Phase 2 completed:
 - Added category tool lists, related categories, FAQ sections, SEO metadata, canonical URLs, Open Graph, Twitter cards, Breadcrumb schema, and FAQ schema.
 - Added category pages to `app/sitemap.ts`.
 
+Phase 3 completed:
+
+- Upgraded the shared tool page template used by all 60 existing tools.
+- Added richer content sections to every tool page:
+  - What is this tool?
+  - How to use this tool
+  - Key features
+  - Supported formats
+  - Privacy note
+  - Related image tools
+  - FAQ
+- Ensured each tool page has at least 5 FAQ entries through shared fallback FAQ content.
+- Increased related tools from 3 to 4 items per tool page.
+- Updated FAQ JSON-LD to use the enriched FAQ set.
+
 Next V2 phases:
 
-- Phase 3: Upgrade existing tool pages with deeper explanatory content and structured data.
 - Phase 4: Add guides under `/guides`.
 - Phase 5: Rebuild footer navigation and verify sitemap/schema coverage.
 
