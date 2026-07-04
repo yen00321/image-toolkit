@@ -30,6 +30,21 @@ canvas {
   max-width: 100%;
 }
 
+.line-clamp-2,
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  -webkit-line-clamp: 3;
+}
+
 .checkerboard {
   background-color: #f8fafc;
   background-image:

@@ -69,22 +69,17 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <SiteHeader />
           {children}
           <footer className="border-t border-line bg-white">
-            <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 text-sm text-muted sm:px-6 lg:grid-cols-[1.2fr_repeat(4,1fr)] lg:px-8">
+            <div className="mx-auto grid max-w-7xl gap-8 px-4 py-8 text-sm text-muted sm:px-6 md:grid-cols-4 lg:px-8">
               <div>
                 <strong className="text-lg text-ink">ImageToolkit</strong>
-                <p className="mt-3 leading-6">
-                  Free browser-based image tools for resizing, compressing, converting, cropping, editing, and preparing
-                  images for websites, social media, documents, and everyday publishing workflows.
-                </p>
+                <p className="mt-3 leading-6">Free browser-based image tools for everyday image tasks.</p>
               </div>
               <FooterColumn
-                title="Popular Tools"
+                title="Tools"
                 links={[
                   ["/image-resizer", "Image Resizer"],
                   ["/image-compressor", "Image Compressor"],
                   ["/jpg-to-png", "JPG to PNG"],
-                  ["/png-to-jpg", "PNG to JPG"],
-                  ["/webp-to-jpg", "WebP to JPG"],
                 ]}
               />
               <FooterColumn
@@ -94,32 +89,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   ["/tools/resize", "Resize"],
                   ["/tools/compress", "Compress"],
                   ["/tools/edit", "Edit"],
-                  ["/tools/social-media", "Social Media"],
-                  ["/tools/pdf", "PDF"],
                 ]}
               />
               <FooterColumn
-                title="Resources"
+                title="Site"
                 links={[
                   ["/guides", "Guides"],
-                  ["/#faq", "FAQ"],
-                  ["/sitemap.xml", "Sitemap"],
-                ]}
-              />
-              <FooterColumn
-                title="Company"
-                links={[
                   ["/about", "About"],
                   ["/privacy-policy", "Privacy Policy"],
                   ["/terms", "Terms"],
                   ["/contact", "Contact"],
                 ]}
               />
-            </div>
-            <div className="border-t border-line">
-              <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-muted sm:px-6 lg:px-8">
-                <p>Canonical production URL: https://www.imagetoolkitapp.com</p>
-              </div>
             </div>
           </footer>
         </LanguageProvider>

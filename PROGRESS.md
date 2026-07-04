@@ -10,7 +10,7 @@ Site name: Image Toolkit
 
 Canonical production URL: `https://www.imagetoolkitapp.com`
 
-Current direction: pause new tool creation and improve the existing 60-tool website with clearer homepage CTAs, better tool cards, stronger navigation, guide resources, deeper homepage content, and AdSense-friendly UX.
+Current direction: pause new tool creation and keep improving the existing 60-tool website with cleaner homepage UX, simpler navigation, stronger content quality, and AdSense-friendly presentation.
 
 ## Tech Stack
 
@@ -185,6 +185,17 @@ Current direction: pause new tool creation and improve the existing 60-tool webs
   - Rebuilt footer with ImageToolkit intro, Popular Tools, Categories, Resources, and Company sections.
   - Added deeper homepage content sections for Why use ImageToolkit, Browser-based privacy, Supported image formats, and Common use cases.
   - Added `/guides` to sitemap.
+- V3.5 UI Cleanup completed:
+  - Simplified the homepage hero to H1, subtitle, search, and one-line trust badges.
+  - Removed dense Hero explanation cards and extra CTA buttons.
+  - Changed homepage category sections into compact category cards.
+  - Homepage categories now show only category name, tool count, short description, and View tools.
+  - Popular Tools now shows 6 tools.
+  - Recently Added now shows 4 tools.
+  - Tool cards now use a smaller fixed-height layout, less description text, one category label, and a short `Open` CTA.
+  - Why use ImageToolkit now shows only 3 concise points.
+  - Homepage FAQ now shows 3 questions.
+  - Footer was simplified to essential product, tool, category, and site links.
 
 ## Tool MVP Features
 
@@ -342,6 +353,14 @@ Latest V3 verification on 2026-07-04:
 - Confirmed robots points to `https://www.imagetoolkitapp.com/sitemap.xml`.
 - Build note: Next.js still reports non-blocking `<img>` warnings in PDF preview components.
 
+Latest V3.5 verification on 2026-07-04:
+
+- `npm.cmd run typecheck`
+- `npm.cmd run build`
+- Next generated 78 static pages successfully.
+- Build note: Next.js still reports non-blocking `<img>` warnings in PDF preview components.
+- No changes were made to AdSense script, GA4 script, canonical domain settings, robots.txt, sitemap structure, or existing tool URLs.
+
 Latest Phase 2 batch:
 
 - Batch 11 target: 2 social tools
@@ -362,7 +381,7 @@ Latest Phase 2 batch:
 
 Latest V2 phase:
 
-- V3 homepage, navigation, guide index, footer, search, and card UX optimization
+- V3.5 homepage UI cleanup
 - Status: complete
 
 Next phase:

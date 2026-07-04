@@ -206,6 +206,21 @@ Completed V3 updates:
   - Supported image formats
   - Common use cases
 
+## ImageToolkit V3.5 UI Cleanup
+
+V3.5 reduces homepage density without adding tools or articles.
+
+Completed V3.5 updates:
+
+- Simplified the homepage hero to H1, subtitle, search, and one-line trust badges.
+- Replaced expanded category tool sections with compact category cards.
+- Limited Popular Tools to 6 items.
+- Limited Recently Added to 4 items.
+- Reduced Tool Card visual weight with shorter copy, fixed height, fewer labels, and a shorter `Open` CTA.
+- Shortened the Why use ImageToolkit section to 3 clear points.
+- Reduced homepage FAQ to 3 questions.
+- Simplified the footer to essential links only.
+
 Future content roadmap:
 
 - Add full long-form article pages for each guide listed on `/guides`.
