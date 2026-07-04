@@ -91,7 +91,7 @@ export const commonTranslations: Record<LanguageCode, Record<CommonKey, string>>
     cropPreview: "Crop preview",
     cropEmptyTitle: "Crop area appears here",
     cropEmptyText: "Upload an image to start cropping.",
-    footerText: "Free browser-first image tools with privacy-friendly local processing and responsible advertising areas.",
+    footerText: "Free browser-first image tools with privacy-friendly local processing.",
   },
   zh: {
     start: "開始使用",
@@ -132,7 +132,7 @@ export const commonTranslations: Record<LanguageCode, Record<CommonKey, string>>
     cropPreview: "裁切預覽",
     cropEmptyTitle: "裁切區會顯示在這裡",
     cropEmptyText: "上傳圖片後即可開始裁切。",
-    footerText: "免費瀏覽器優先圖片工具。廣告預留區之後可接入 Google AdSense。",
+    footerText: "免費瀏覽器優先圖片工具，重視本機處理與隱私。",
   },
   es: {
     start: "Comenzar",
@@ -173,7 +173,7 @@ export const commonTranslations: Record<LanguageCode, Record<CommonKey, string>>
     cropPreview: "Vista previa del recorte",
     cropEmptyTitle: "El área de recorte aparecerá aquí",
     cropEmptyText: "Sube una imagen para recortar.",
-    footerText: "Herramientas gratuitas de imagen en el navegador. Los espacios de anuncios están reservados para Google AdSense.",
+    footerText: "Herramientas gratuitas de imagen en el navegador con procesamiento local y privado.",
   },
   vi: {
     start: "Bắt đầu",
@@ -214,7 +214,7 @@ export const commonTranslations: Record<LanguageCode, Record<CommonKey, string>>
     cropPreview: "Xem trước cắt ảnh",
     cropEmptyTitle: "Vùng cắt sẽ hiện ở đây",
     cropEmptyText: "Tải ảnh lên để bắt đầu cắt.",
-    footerText: "Công cụ ảnh miễn phí chạy trong trình duyệt. Vị trí quảng cáo được chừa cho Google AdSense.",
+    footerText: "Công cụ ảnh miễn phí chạy trong trình duyệt với xử lý cục bộ thân thiện với quyền riêng tư.",
   },
   id: {
     start: "Mulai",
@@ -255,7 +255,7 @@ export const commonTranslations: Record<LanguageCode, Record<CommonKey, string>>
     cropPreview: "Pratinjau potong",
     cropEmptyTitle: "Area potong muncul di sini",
     cropEmptyText: "Unggah gambar untuk mulai memotong.",
-    footerText: "Alat gambar gratis berbasis browser. Tempat iklan disiapkan untuk Google AdSense.",
+    footerText: "Alat gambar gratis berbasis browser dengan pemrosesan lokal yang ramah privasi.",
   },
 };
 
