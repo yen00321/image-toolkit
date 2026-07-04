@@ -136,6 +136,27 @@ ca-pub-4691862928355691
 
 The current MVP processes selected images in the browser using Canvas-based utilities. Google AdSense is loaded in production, while in-page ad placements still use clean placeholder blocks until real ad units are configured.
 
+## ImageToolkit V2 Upgrade
+
+V2 focuses on content quality, UX, and AdSense readiness after the first AdSense review identified low-value content risk. The current priority is improving navigation, page depth, structured content, and trust signals instead of adding more tools.
+
+Phase 1 completed:
+
+- Rebuilt the homepage as a category-based tool directory instead of a flat 60-tool grid.
+- Added a new hero section with Free, Fast, Browser-based, and Privacy-friendly trust points.
+- Added homepage tool search by tool name, description, keyword, and category.
+- Added category previews for Convert, Resize, Compress, Edit, Social Media, PDF, and Metadata.
+- Added Popular Tools, Recently Added, Why Use ImageToolkit, Browser-based Privacy, and homepage FAQ sections.
+- Added shared category data in `lib/tool-categories.ts` for upcoming category pages.
+- Added homepage FAQ and WebApplication JSON-LD.
+
+Next V2 phases:
+
+- Phase 2: Add category landing pages under `/tools/*`.
+- Phase 3: Upgrade existing tool pages with deeper explanatory content and structured data.
+- Phase 4: Add guides under `/guides`.
+- Phase 5: Rebuild footer navigation and verify sitemap/schema coverage.
+
 ## Phase 2 Expansion
 
 The Phase 2 expansion is adding browser-first tools in small batches. Format tools now include HEIC, AVIF, SVG, BMP, TIFF, GIF, ICO, WebP, and PDF utilities. HEIC and TIFF support depends on the user's browser decoder support.

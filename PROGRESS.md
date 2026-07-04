@@ -1,16 +1,16 @@
 # Image Toolkit Progress Notes
 
-Last updated: 2026-06-25
+Last updated: 2026-07-04
 
 ## Current Goal
 
-Build an English-first global SEO image tools website for Google AdSense monetization.
+Upgrade ImageToolkit V2 for stronger content quality, UX, SEO, and Google AdSense review readiness after a low-value-content rejection.
 
 Site name: Image Toolkit
 
 Canonical production URL: `https://www.imagetoolkitapp.com`
 
-Current expansion target: Phase 2, grow from 10 tools toward 60 tools without changing GA4, AdSense, Search Console, canonical, robots, or global SEO infrastructure.
+Current V2 direction: pause new tool creation and improve the existing 60-tool website with category navigation, deeper content, better internal linking, structured data, guides, and a stronger footer.
 
 ## Tech Stack
 
@@ -135,6 +135,20 @@ Current expansion target: Phase 2, grow from 10 tools toward 60 tools without ch
   - JSON-LD WebApplication schema
   - FAQ schema
   - Breadcrumb schema
+- Started ImageToolkit V2 Content + UX Upgrade after AdSense rejected the site once for low-value content.
+- V2 Phase 1 completed:
+  - Rebuilt the homepage so it no longer flat-lists all 60 tools.
+  - Added hero copy: "Free Online Image Tools".
+  - Added trust points for Free, Fast, Browser-based, and Privacy-friendly usage.
+  - Added homepage tool search with placeholder: "Search image tools...".
+  - Added category sections for Convert, Resize, Compress, Edit, Social Media, PDF, and Metadata.
+  - Limited each homepage category preview to 6 tools.
+  - Added View All links for upcoming category landing pages.
+  - Added Popular Tools and Recently Added sections.
+  - Added Why Use ImageToolkit and Browser-based Privacy content sections.
+  - Added homepage FAQ content.
+  - Added homepage FAQ JSON-LD and WebApplication JSON-LD.
+  - Added reusable category data in `lib/tool-categories.ts`.
 
 ## Tool MVP Features
 
@@ -268,6 +282,13 @@ Latest verification on 2026-06-25:
 - `npm.cmd run build`
 - Next generated 20 static pages successfully.
 
+Latest V2 verification on 2026-07-04:
+
+- `npm.cmd run typecheck`
+- `npm.cmd run build`
+- Next generated 70 static pages successfully.
+- Build note: Next.js still reports non-blocking `<img>` warnings in PDF preview components. These are existing local blob previews and do not block production builds.
+
 Latest Phase 2 batch:
 
 - Batch 11 target: 2 social tools
@@ -285,6 +306,23 @@ Latest Phase 2 batch:
 - Current tool count: 60
 - 60-tool milestone: complete
 - Remaining Phase 1 format tools: none
+
+Latest V2 phase:
+
+- Phase 1: homepage V2 UI + search + category data structure
+- Status: complete
+
+Next V2 phase:
+
+- Phase 2: create category pages:
+  - `/tools/convert`
+  - `/tools/resize`
+  - `/tools/compress`
+  - `/tools/edit`
+  - `/tools/social-media`
+  - `/tools/pdf`
+  - `/tools/metadata`
+- Each category page needs 300+ words of English content, tool lists, related categories, 5 FAQs, SEO metadata, Breadcrumb schema, and FAQ schema.
 
 Development server was started on:
 
