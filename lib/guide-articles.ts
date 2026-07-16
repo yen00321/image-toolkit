@@ -46,6 +46,14 @@ const articleContent: Record<string, Omit<GuideArticle, keyof GuideInfo>> = {
           "For photos, JPG or WebP usually works well. For screenshots, graphics, or transparent images, PNG or WebP may be better. The right format depends on whether you care more about compatibility, transparency, or file size.",
         ],
       },
+      {
+        heading: "Quality checklist before downloading",
+        paragraphs: [
+          "Before you download the final resized image, check four things: the subject is not stretched, the important area is still visible, text remains readable, and the file dimensions match the place where the image will be used. This small review step catches most resize problems before the image reaches a website, form, marketplace, or social platform.",
+          "If the image contains a face, product, logo, or screenshot text, zoom in and inspect that area specifically. Softness around a background may not matter, but unreadable text or a distorted product edge can make the image look unprofessional. When quality matters, export one version at the target size and another slightly larger version, then compare them in the real context where the image will appear.",
+          "For repeat work, save a small note with your preferred export sizes. A blog may use one size for featured images and another for thumbnails. A shop may use one square product image size and one wider banner size. Reusing the same dimensions makes future images faster to prepare and gives the final site a more consistent appearance.",
+        ],
+      },
     ],
     faqs: [
       { question: "Does resizing reduce image quality?", answer: "Downsizing usually keeps good quality, but enlarging a small image can make it look soft because the original does not contain enough detail." },
@@ -94,6 +102,14 @@ const articleContent: Record<string, Omit<GuideArticle, keyof GuideInfo>> = {
         paragraphs: [
           "One common mistake is converting every image to PNG because PNG sounds higher quality. That can create very large files for photos without providing a visible benefit. Another mistake is using JPG for logos or graphics that require transparency, which forces a background color and can make the asset harder to reuse.",
           "A better workflow is to decide what the image contains first. If it is a photo, test JPG or WebP. If it is a screenshot, logo, or graphic with transparent areas, start with PNG. If the image is for a website and the platform supports modern formats, compare a WebP version as well. The right decision depends on the destination, not only the file extension.",
+        ],
+      },
+      {
+        heading: "Examples from real workflows",
+        paragraphs: [
+          "For an online store, product photos are usually best exported as JPG or WebP because the images are photographic and need to load quickly. For a store logo, PNG or SVG is usually better because transparency and sharp edges matter more than photographic compression. For a customer support screenshot, PNG is often clearer because text and interface details need to stay readable.",
+          "For documents and application forms, JPG is often accepted more reliably than PNG, but that does not mean JPG is always visually better. If a form accepts both and the image is a screenshot, PNG may preserve details better. If the file size limit is strict, JPG or WebP may be easier to upload. Thinking through the destination keeps the choice practical rather than theoretical.",
+          "For social media, both formats can work, but the content should guide the choice. A lifestyle photo usually works well as JPG, while a text-heavy announcement graphic may look cleaner as PNG before the platform recompresses it. If the final platform compresses uploads heavily, starting with a clean source file is more important than chasing a perfect file extension.",
         ],
       },
     ],
@@ -146,6 +162,15 @@ const articleContent: Record<string, Omit<GuideArticle, keyof GuideInfo>> = {
           "Also consider who will use the file later. A developer may prefer WebP for production, while a designer may want to keep PNG as a reusable source. The cleanest workflow is to keep the PNG original, publish the optimized WebP where possible, and keep a fallback format available when an older system requires it.",
         ],
       },
+      {
+        heading: "When PNG is still the safer option",
+        paragraphs: [
+          "PNG remains useful when the image is part of a design system, documentation library, or asset handoff where other people may need a predictable source file. A transparent PNG logo can be placed over different backgrounds without surprise. A PNG screenshot can be reused in manuals or support articles without the same compression artifacts that a low-quality JPG might introduce.",
+          "If the image is small, the size savings from WebP may not be important enough to justify extra workflow complexity. For example, a tiny UI icon or small transparent badge may already be lightweight as PNG. Optimization should improve the user experience, not create unnecessary format management for files that are already small and clean.",
+          "A good middle path is to keep PNG for source, editing, and collaboration, then publish WebP for public website delivery when the result is smaller and visually stable. This gives designers a reliable file and gives visitors a faster page. It also makes future updates easier because you can export a new WebP from a clean PNG source instead of editing an already optimized web file.",
+          "For important pages, compare both formats in a browser rather than only in an image viewer. Website backgrounds, scaling rules, and responsive layouts can reveal issues that a standalone preview hides. If the WebP version keeps edges clean and reduces size, it is usually a good publishing format. If the image depends on exact transparency or will be reused by many tools, keep PNG available.",
+        ],
+      },
     ],
     faqs: [
       { question: "Is WebP better than PNG?", answer: "For website performance, WebP is often smaller. PNG is still excellent for reliable transparency and sharp graphics." },
@@ -194,6 +219,16 @@ const articleContent: Record<string, Omit<GuideArticle, keyof GuideInfo>> = {
         paragraphs: [
           "A simple checklist helps avoid over-compression. First, resize the image to a realistic display size. Second, choose the format that fits the content. Third, export with a moderate quality setting. Fourth, compare the result with the original at normal viewing size. Finally, keep the original file in case you need another version later.",
           "This workflow is especially useful for teams that publish many images. If everyone compresses images the same way before upload, the website stays lighter and the visual quality remains consistent. It also reduces the chance of uploading huge camera files directly into a CMS or store platform.",
+        ],
+      },
+      {
+        heading: "How to judge the final result",
+        paragraphs: [
+          "The best compressed image is not always the smallest one. A tiny file that makes a product look dull, turns a face blocky, or makes screenshot text hard to read is not a good result. Judge compression by looking at the image in its final context. A thumbnail can tolerate more compression than a portfolio hero image or a product close-up.",
+          "It also helps to compare file size savings as a percentage. Reducing a 5 MB image to 800 KB is a major win, even if it is not the smallest possible export. Reducing 800 KB to 650 KB may not be worth visible quality loss. Compression should serve the user experience, not just a number in the file properties.",
+          "For content teams, create simple export targets instead of deciding from scratch every time. Website photos might use one quality range, screenshots might use a lighter compression setting, and thumbnails might use smaller dimensions. Consistent rules reduce mistakes and make the whole image library easier to manage.",
+          "Compression is also easier to judge when you know the role of the image. A small background texture, a blog thumbnail, and a product hero image do not need the same quality level. Use stronger compression where detail is less important, and protect quality where the image is part of trust, sales, or instruction. This keeps the site fast without making key visuals look careless.",
+          "If you are preparing images for a client, marketplace, or business website, keep a copy of the settings that worked well. Recording the final width, format, and quality value saves time the next time you publish similar images.",
         ],
       },
     ],
@@ -246,6 +281,16 @@ const articleContent: Record<string, Omit<GuideArticle, keyof GuideInfo>> = {
           "A format system also helps content editors. Instead of asking which format to use every time, they can follow simple rules based on the image type. The result is a faster site, cleaner media library, and fewer oversized files accumulating over time.",
         ],
       },
+      {
+        heading: "Balance quality, speed, and compatibility",
+        paragraphs: [
+          "No single image format is perfect for every website. A modern marketing site may lean heavily on WebP for performance, while an internal tool may prefer JPG and PNG because they are accepted everywhere. A design-heavy site may use SVG for icons and logos, while a photography portfolio may keep higher-quality JPG or WebP exports to protect visual detail.",
+          "The practical goal is to create a format policy that matches your audience and publishing workflow. If your users are on modern browsers, WebP can be a strong default. If your content is shared through older systems, JPG and PNG remain important. If your team edits assets often, keep original source files separate from optimized web exports so you can regenerate formats later.",
+          "When in doubt, test the image in the real place it will be used. A format that looks perfect in a local preview may behave differently inside a CMS, email builder, or social platform. Checking the final context helps you catch background changes, transparency issues, automatic recompression, and file size limits before visitors or customers see the result.",
+          "For search and user experience, consistent image handling matters. Pages with oversized images can feel slow, while images that are compressed too far can reduce trust. A balanced workflow gives each image enough quality for its purpose while avoiding unnecessary bytes. This is especially important for large sites where hundreds of small decisions add up across many pages.",
+          "Treat format selection as part of publishing, not an afterthought. Decide which formats belong in your source library, which formats belong on public pages, and which formats are best for sharing or download. That small policy makes future image work more predictable.",
+        ],
+      },
     ],
     faqs: [
       { question: "What is the best website image format?", answer: "WebP is often best for performance, JPG is good for photos, PNG is good for transparency, and SVG is best for vector graphics." },
@@ -294,6 +339,18 @@ const articleContent: Record<string, Omit<GuideArticle, keyof GuideInfo>> = {
         paragraphs: [
           "After resizing, open the exported image before posting. Check whether text is readable, faces are centered, logos are not cropped, and the background still supports the design. Social platforms often show images in several contexts, such as feeds, previews, profile grids, and share cards.",
           "If an image contains important text, leave extra margin around the edges. If it contains a face or product, keep the subject away from corners where platform UI elements may appear. A few seconds of review can prevent a post from looking unfinished after upload.",
+        ],
+      },
+      {
+        heading: "Plan a reusable social image workflow",
+        paragraphs: [
+          "A reliable workflow starts with a master image that has enough resolution for every platform you care about. From that master, export a square version for profile or feed use, a vertical version for stories and short-form covers, and a wide version for banners or thumbnails. This prevents you from repeatedly resizing a file that has already been compressed or cropped.",
+          "If you work with a brand, keep safe areas in mind. Put logos and key text near the center, leave breathing room near the edges, and avoid placing important details where platform buttons or profile overlays may appear. This is especially important for YouTube banners, TikTok covers, and mobile-first story formats where the visible area can change by device.",
+          "For campaigns, create all platform sizes before posting begins. That gives you time to review consistency, correct mistakes, and keep the visual style aligned. Rushing the resize step right before publishing is one of the easiest ways to end up with cropped text, mismatched colors, or images that feel inconsistent across channels.",
+          "Keep a separate source version for each campaign. Social platforms often compress uploads, and you may need to export another size later for an ad, story, profile image, or thumbnail. A clean source file makes that easier and prevents quality from getting worse with every new export.",
+          "A useful habit is to place the subject slightly inside the frame instead of touching the edges. This gives every platform more room to crop, round, or overlay controls without hiding the most important part of the image. It also helps when one asset is adapted into several different aspect ratios.",
+          "For text-based graphics, create a mobile preview before posting. Text that looks balanced on desktop can become too small on a phone feed. If the message is important, simplify the layout, increase contrast, and leave more margin around the text before exporting the final size.",
+          "Review every export before publishing.",
         ],
       },
     ],
@@ -346,6 +403,16 @@ const articleContent: Record<string, Omit<GuideArticle, keyof GuideInfo>> = {
           "If conversion works but the file is too large, resize the JPG after conversion or lower the JPG quality slightly. If the image is for a form, check the form's file size limit before uploading. A compatible file is only useful if it also fits the size requirements of the destination.",
         ],
       },
+      {
+        heading: "When to use JPG instead of PNG",
+        paragraphs: [
+          "After converting a HEIC file, JPG is usually the best output for normal photos because it is broadly compatible and reasonably small. If the image is a family photo, product photo, profile picture, or form upload, JPG is usually accepted by the widest range of systems. It is also easier to email and preview on older devices.",
+          "PNG can be useful if the rendered image needs a lossless-style copy for editing, but it often creates larger files for photos. Since HEIC photos are usually photographic, converting to PNG may increase file size without a visible benefit. Use PNG only when a workflow specifically asks for it or when you need to preserve the rendered pixels for further editing.",
+          "A practical approach is to convert HEIC to JPG first, then resize or compress that JPG if the upload limit is strict. Keep the original HEIC separately so you can create another version later if the first export is not right.",
+          "If you are preparing many phone photos for a website, convert them to a common format before editing. Mixing HEIC, JPG, and PNG files in one workflow can create confusing upload errors and inconsistent file sizes. A predictable JPG or WebP export process is easier for teams and safer for public publishing.",
+          "It is also worth checking orientation after conversion. Phone photos can store rotation information in metadata, and some tools display that information differently. Open the converted JPG before uploading it to make sure the photo is not sideways and that the crop still shows the subject correctly.",
+        ],
+      },
     ],
     faqs: [
       { question: "Why convert HEIC to JPG?", answer: "JPG is accepted by more websites, forms, apps, and devices than HEIC." },
@@ -394,6 +461,17 @@ const articleContent: Record<string, Omit<GuideArticle, keyof GuideInfo>> = {
         paragraphs: [
           "The best file size reduction usually comes from combining methods. For example, resize a large photo to the correct dimensions, convert it to WebP or JPG, choose a reasonable quality setting, and remove metadata. Each step may save some file size, and together they can make a large difference.",
           "Avoid applying the same method repeatedly to the same file. Compressing an already compressed JPG again can reduce quality quickly. Keep the original source file, then create optimized exports from that source whenever you need a different size or format.",
+        ],
+      },
+      {
+        heading: "Choose the right target size",
+        paragraphs: [
+          "Before reducing file size, decide what size the image actually needs to be. A profile photo may only need a square export, while a website hero image may need a wide format with more pixels. If you do not define the target, it is easy to over-compress a large file instead of simply resizing it to a sensible dimension.",
+          "For email and forms, check the upload limit first. If the limit is 2 MB, you do not always need to push the image down to 100 KB. For websites, think about how many images appear on one page. A single 500 KB image may be acceptable in some contexts, but twenty 500 KB thumbnails create a heavy page.",
+          "The most stable workflow is to create a target for each use case: one size for thumbnails, one for full-width content images, one for social sharing, and one for archive originals. This keeps file size decisions consistent and prevents random exports every time a new image is needed.",
+          "For public pages, also think about the user's connection speed. A file that loads instantly on office Wi-Fi may feel slow on mobile data. Reducing image size is not only about meeting an upload limit; it is also about making the page feel responsive for more visitors in more locations.",
+          "If the image will appear above the fold, be especially careful. Large first-screen images can delay the moment when a visitor feels the page is ready. For less important images lower on the page, smaller files and lazy loading are usually enough. Matching optimization effort to page importance helps you spend time where it has the biggest user impact.",
+          "For archives, do not replace the master file with the optimized export. Store the original separately, then publish smaller versions. That way you can always create a new format, size, or crop later without depending on a file that has already been compressed.",
         ],
       },
     ],
@@ -446,6 +524,18 @@ const articleContent: Record<string, Omit<GuideArticle, keyof GuideInfo>> = {
           "For websites, resolution also affects performance. A high-resolution original is useful for editing, but the published version should match the layout. This is why many teams keep source images separately from optimized web exports.",
         ],
       },
+      {
+        heading: "Resolution examples",
+        paragraphs: [
+          "A 400x400 image may be enough for a small avatar, but it is not enough for a large website banner. A 1280x720 image works well for many video thumbnails, but it may not be the right shape for a vertical story. A 3000 pixel photo may be useful as a source file, but it is often too large to publish directly in a blog post.",
+          "Resolution should always be paired with purpose. If the image is decorative, smaller dimensions and stronger compression may be acceptable. If it is a product photo or portfolio image, more detail may be needed. If it contains text, readability matters more than file size alone.",
+          "When creating multiple versions, name them clearly so the purpose is obvious. For example, keep a source image, a web image, a thumbnail, and a social image as separate files. This avoids confusion and makes it easier to update assets later without losing the original quality.",
+          "Avoid judging resolution only by file size. A large file can still be blurry if the source was low quality, and a small file can look sharp if it has the right pixel dimensions for its display size. Check the actual dimensions and preview the image where it will be used.",
+          "When working with clients or collaborators, specify resolution in pixels instead of vague terms like high quality or web size. A request for 1200x800 pixels is clear, while high quality can mean different things to different people. Clear dimensions reduce revisions and make it easier to prepare images for websites, ads, forms, and social media.",
+          "If an image must work in more than one layout, start with the largest practical source and create separate exports for each use case. This is better than stretching one small file across every design.",
+          "Preview the final placement too.",
+        ],
+      },
     ],
     faqs: [
       { question: "What is image resolution?", answer: "For digital images, resolution usually means pixel dimensions such as 1200x800." },
@@ -494,6 +584,18 @@ const articleContent: Record<string, Omit<GuideArticle, keyof GuideInfo>> = {
         paragraphs: [
           "After optimizing images, check important pages on both desktop and mobile. Look for large hero images, product grids, blog thumbnails, and repeated logos. These are often the areas where image weight adds up quickly. A single optimized image helps, but a consistent media library helps much more.",
           "Image performance is not a one-time task. New content can slowly make a site heavy again if editors upload full-size photos. Create a simple publishing rule: resize to the right dimensions, compress, choose the right format, then upload. That rule keeps the site fast as it grows.",
+        ],
+      },
+      {
+        heading: "Practical publishing rules",
+        paragraphs: [
+          "A simple set of rules can keep a website fast without requiring every editor to understand image engineering. Do not upload full-resolution camera files directly. Resize images to the layout size. Use WebP for modern web images when possible. Keep JPG or PNG when compatibility or transparency requires it. Compress the final export before publishing.",
+          "For teams, document these rules near the publishing workflow. If blog authors, store managers, and marketing teammates all follow the same image process, the site stays cleaner over time. This also helps avoid emergency performance fixes later, when a page has already become heavy from months of oversized uploads.",
+          "Finally, review image-heavy pages after major content updates. A new homepage banner, product collection, or campaign landing page can change performance quickly. Checking images before launch is much easier than fixing slow pages after users and search engines have already experienced them.",
+          "Use internal links and image previews responsibly as well. A guide page, product page, or gallery can become heavy if every section loads large images at once. Optimized image files, sensible dimensions, and lazy loading work together to make the page easier to browse.",
+          "For SEO-focused pages, image speed and clarity both matter. A fast page helps visitors stay, but clear screenshots and product photos help them understand the content. The best result is not the smallest possible file; it is a page where images load quickly, look trustworthy, and support the text around them.",
+          "Build image review into the publishing checklist. Before a page goes live, confirm that the largest images are resized, compressed, named clearly, and using a suitable format. This small routine prevents many slow-page problems before they reach users.",
+          "When the workflow is repeated for every new page, image performance becomes easier to maintain. Editors can publish faster, visitors see pages sooner, and the site avoids gradually collecting oversized media files.",
         ],
       },
     ],

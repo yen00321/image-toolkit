@@ -265,6 +265,8 @@ Completed:
 - Linked guide cards on `/guides` to the full article pages.
 - Added guide article URLs to `sitemap.xml`.
 - Confirmed `ads.txt` is available at `/ads.txt` as plain text.
+- Expanded all 10 guide articles to 800+ words to strengthen content depth before another AdSense review request.
+- Verified the production build generates 88 pages successfully.
 
 ## Phase 2 Expansion
 

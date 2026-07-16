@@ -1,6 +1,6 @@
 # Image Toolkit Progress Notes
 
-Last updated: 2026-07-04
+Last updated: 2026-07-17
 
 ## Current Goal
 
@@ -213,6 +213,11 @@ Current direction: pause new tool creation and keep improving the existing 60-to
   - Added Article schema, Breadcrumb schema, and FAQ schema to guide articles.
   - Linked `/guides` cards to full article pages.
   - Added guide article URLs to `app/sitemap.ts`.
+- AdSense stability pass completed:
+  - Expanded all 10 guide articles to 800+ words each.
+  - Kept existing GA4, AdSense script, canonical URL, robots, sitemap, and tool URLs unchanged.
+  - Verified `npm run typecheck` passes.
+  - Verified `npm run build` passes and generates 88 pages.
 
 ## Tool MVP Features
 
