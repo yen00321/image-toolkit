@@ -206,6 +206,13 @@ Current direction: pause new tool creation and keep improving the existing 60-to
   - Category pages now include a responsive ad above the tool list and one after each 12 tools for long categories.
   - Static pages now use the responsive ad component after page intros.
   - Privacy policy advertising copy was updated to describe real advertising areas instead of placeholders.
+- AdSense low-value-content follow-up completed:
+  - Confirmed production `ads.txt` is working as `text/plain`.
+  - Added 10 standalone guide article pages under `/guides/[slug]`.
+  - Added table of contents, article sections, related tools, and FAQ to each guide article.
+  - Added Article schema, Breadcrumb schema, and FAQ schema to guide articles.
+  - Linked `/guides` cards to full article pages.
+  - Added guide article URLs to `app/sitemap.ts`.
 
 ## Tool MVP Features
 
@@ -381,6 +388,14 @@ Latest Ad Placement verification on 2026-07-04:
 - Confirmed no changes to canonical domain settings, robots.txt, sitemap structure, www redirect, or existing tool URLs.
 - Build note: Next.js still reports non-blocking `<img>` warnings in PDF preview components.
 
+Latest AdSense content follow-up verification on 2026-07-17:
+
+- `npm.cmd run typecheck`
+- `npm.cmd run build`
+- Next generated 88 static pages successfully, including 10 guide article pages.
+- Confirmed production `https://www.imagetoolkitapp.com/ads.txt` returns the correct plain text publisher record.
+- Build note: Next.js still reports non-blocking `<img>` warnings in PDF preview components.
+
 Latest Phase 2 batch:
 
 - Batch 11 target: 2 social tools
@@ -401,7 +416,7 @@ Latest Phase 2 batch:
 
 Latest phase:
 
-- Ad Placement optimization
+- AdSense low-value-content follow-up: guide article pages
 - Status: complete
 
 Next phase:

@@ -78,6 +78,12 @@ export function GuidesContent() {
                 <div>
                   <h2 className="text-2xl font-extrabold tracking-normal text-ink">{guide.title}</h2>
                   <p className="mt-3 text-sm leading-7 text-muted">{guide.description}</p>
+                  <Link
+                    href={`/guides/${guide.slug}`}
+                    className="mt-4 inline-flex rounded-lg bg-brand px-4 py-2 text-sm font-extrabold text-white hover:bg-brand-dark"
+                  >
+                    Read guide
+                  </Link>
                 </div>
               </div>
               <div className="mt-5">

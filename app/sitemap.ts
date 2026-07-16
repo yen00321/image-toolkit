@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { guideArticles } from "@/lib/guide-articles";
 import { siteConfig, tools } from "@/lib/site";
 import { toolCategoryGroups } from "@/lib/tool-categories";
 
@@ -24,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: 0.85,
+    })),
+    ...guideArticles.map((article) => ({
+      url: `${siteConfig.url}/guides/${article.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
     })),
     ...tools.map((tool) => ({
       url: `${siteConfig.url}${tool.href}`,

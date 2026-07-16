@@ -250,9 +250,21 @@ Completed V3.5 updates:
 
 Future content roadmap:
 
-- Add full long-form article pages for each guide listed on `/guides`.
-- Add Article schema, FAQ schema, and internal links to each individual guide article.
+- Continue expanding guide articles toward deeper 800+ word coverage where useful.
 - Continue improving AdSense policy-friendly content depth before requesting another review.
+
+## AdSense Content Fix
+
+After AdSense continued to report low-value content, `/guides` was upgraded from a guide index into a real article hub.
+
+Completed:
+
+- Added 10 standalone guide article pages under `/guides/[slug]`.
+- Added table of contents, long-form sections, FAQ, and related tool links to each guide article.
+- Added Article schema, Breadcrumb schema, and FAQ schema to guide article pages.
+- Linked guide cards on `/guides` to the full article pages.
+- Added guide article URLs to `sitemap.xml`.
+- Confirmed `ads.txt` is available at `/ads.txt` as plain text.
 
 ## Phase 2 Expansion
 
