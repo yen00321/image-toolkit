@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 const ADSENSE_CLIENT = "ca-pub-4691862928355691";
 const isProduction = process.env.NODE_ENV === "production";
+const isReviewMode = process.env.NEXT_PUBLIC_ADSENSE_REVIEW_MODE !== "false";
 
 declare global {
   interface Window {
@@ -19,7 +20,7 @@ type AdUnitProps = {
 
 function AdUnit({ slot, className = "", minHeight = 90 }: AdUnitProps) {
   useEffect(() => {
-    if (!isProduction || !slot) return;
+    if (!isProduction || isReviewMode || !slot) return;
 
     try {
       window.adsbygoogle = window.adsbygoogle || [];
@@ -29,7 +30,7 @@ function AdUnit({ slot, className = "", minHeight = 90 }: AdUnitProps) {
     }
   }, [slot]);
 
-  if (!isProduction || !slot) {
+  if (!isProduction || isReviewMode || !slot) {
     return null;
   }
 

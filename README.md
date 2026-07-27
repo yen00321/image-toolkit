@@ -135,11 +135,15 @@ ca-pub-4691862928355691
 Ad placement components are production-only and render only when a matching ad slot is configured:
 
 ```bash
+NEXT_PUBLIC_ADSENSE_REVIEW_MODE=true
 NEXT_PUBLIC_ADSENSE_RESPONSIVE_SLOT=
 NEXT_PUBLIC_ADSENSE_IN_ARTICLE_SLOT=
 NEXT_PUBLIC_ADSENSE_TOOL_PAGE_SLOT=
 NEXT_PUBLIC_ADSENSE_FOOTER_SLOT=
 ```
+
+`NEXT_PUBLIC_ADSENSE_REVIEW_MODE` defaults to review-safe behavior unless it is explicitly set to `false`.
+The global AdSense script remains available in production, but in-page ad units do not render during review mode.
 
 ## Privacy Note
 
@@ -267,6 +271,11 @@ Completed:
 - Confirmed `ads.txt` is available at `/ads.txt` as plain text.
 - Expanded all 10 guide articles to 800+ words to strengthen content depth before another AdSense review request.
 - Verified the production build generates 88 pages successfully.
+- Added an AdSense review-safe mode that keeps the global script but hides in-page ad units until real ad slots are ready.
+- Added a full FAQ page and linked it from navigation, footer, and sitemap.
+- Expanded About, Privacy Policy, Terms, and Contact pages with clearer trust, privacy, format support, and tool limitation details.
+- Added custom non-template content for the most important tool pages, including resizing, compression, cropping, core converters, Instagram, YouTube thumbnail, and PDF workflows.
+- Verified the review-safe production build generates 89 pages successfully, including `/faq`.
 
 ## Phase 2 Expansion
 

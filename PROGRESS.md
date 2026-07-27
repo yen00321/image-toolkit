@@ -1,6 +1,6 @@
 # Image Toolkit Progress Notes
 
-Last updated: 2026-07-17
+Last updated: 2026-07-27
 
 ## Current Goal
 
@@ -19,7 +19,7 @@ Current direction: pause new tool creation and keep improving the existing 60-to
 - TypeScript
 - Tailwind CSS
 - Browser-first image processing with Canvas
-- Production-only Google AdSense loader with responsive in-page ad components
+- Production-only Google AdSense loader with review-safe in-page ad components
 
 ## Completed
 
@@ -218,6 +218,14 @@ Current direction: pause new tool creation and keep improving the existing 60-to
   - Kept existing GA4, AdSense script, canonical URL, robots, sitemap, and tool URLs unchanged.
   - Verified `npm run typecheck` passes.
   - Verified `npm run build` passes and generates 88 pages.
+- AdSense review-safe content pass completed:
+  - Added `NEXT_PUBLIC_ADSENSE_REVIEW_MODE` behavior to keep in-page ad units hidden during review unless explicitly disabled.
+  - Kept the global AdSense publisher script in `app/layout.tsx`.
+  - Added `/faq` with FAQ schema and Breadcrumb schema.
+  - Linked FAQ from the primary navigation, footer, and `app/sitemap.ts`.
+  - Expanded About, Privacy Policy, Terms, and Contact with more complete trust, privacy, tool limitation, and support details.
+  - Added custom non-template content for high-value tool pages through `lib/tool-content.ts`.
+  - Custom content currently covers Image Resizer, Image Compressor, Crop Image, JPG to PNG, PNG to JPG, Image to WebP, WebP to JPG, Instagram Resizer, YouTube Thumbnail Resizer, PDF to Images, and Images to PDF.
 
 ## Tool MVP Features
 
@@ -421,13 +429,22 @@ Latest Phase 2 batch:
 
 Latest phase:
 
-- AdSense low-value-content follow-up: guide article pages
-- Status: complete
+- AdSense review-safe content pass
+- Status: complete locally; pending commit, push, and production verification
+
+Latest AdSense review-safe verification on 2026-07-27:
+
+- `npm.cmd run typecheck`
+- `npm.cmd run build`
+- Next generated 89 static pages successfully, including `/faq`.
+- Confirmed app, components, library code, and built app output do not contain visible old ad placeholder phrases.
+- Confirmed sitemap build output includes `https://www.imagetoolkitapp.com/faq`.
+- Build note: Next.js still reports non-blocking `<img>` warnings in PDF preview components.
 
 Next phase:
 
-- Add full long-form article pages for each guide listed on `/guides`.
-- Add Article schema, FAQ schema, Breadcrumb schema, table of contents, and internal links to related tools for each guide article.
+- After deployment, request Search Console indexing for the homepage, `/faq`, `/about`, `/privacy-policy`, `/terms`, `/contact`, `/guides`, and the highest-value tool pages.
+- Wait for Google to refresh snippets so old ad placeholder text is no longer visible before requesting AdSense review again.
 
 Development server was started on:
 
@@ -446,20 +463,19 @@ Note: Browser automation could not inspect `127.0.0.1:3000` because the in-app b
   - `/vi/image-resizer`
   - `/id/image-resizer`
 - Google AdSense global loader has been added for production.
-- Responsive ad components are present and ready for real ad slot IDs.
+- Responsive ad components are present, but in-page units are hidden during review mode unless `NEXT_PUBLIC_ADSENSE_REVIEW_MODE=false`.
 - Static AdSense-readiness pages are present. Contact email is currently `hello@imagetoolkitapp.com`.
 - User images are intended to stay in the browser and not upload to a server.
 - `npm install` reported 2 moderate vulnerabilities. Do not use `npm audit fix --force` blindly because it may break dependency compatibility.
 
 ## Recommended Next Steps
 
-1. Verify the 60-tool production deployment, then plan the 100-tool roadmap after AdSense review status is clear.
-2. Add proper multilingual SEO routes and `hreflang`.
-3. Add long-form SEO content under each tool page.
-4. Improve mobile visual QA once browser access is available.
-5. Add image test fixtures and automated component checks.
-6. Add real AdSense ad slot IDs after approval/configuration.
-7. Add AdSense policy-friendly content depth to each tool page.
+1. Deploy the review-safe content pass to production and verify `/faq`, key tool pages, `ads.txt`, sitemap, robots, GA4, and AdSense script.
+2. Request Search Console indexing for updated trust pages, guides, and key tool pages.
+3. Wait until Google snippets no longer show old ad placeholder text before requesting AdSense review.
+4. Continue replacing template-style content on remaining social and edit tools after AdSense status is clear.
+5. Add proper multilingual SEO routes and `hreflang`.
+6. Add real AdSense ad slot IDs after approval/configuration, then set `NEXT_PUBLIC_ADSENSE_REVIEW_MODE=false`.
 
 ## Important Files
 

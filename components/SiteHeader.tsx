@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/#popular-tools", label: "Tools" },
   { href: "/tools/convert", label: "Categories" },
   { href: "/guides", label: "Guides" },
+  { href: "/faq", label: "FAQ" },
   { href: "/about", label: "About" },
   { href: "/privacy-policy", label: "Privacy" },
   { href: "/contact", label: "Contact" },

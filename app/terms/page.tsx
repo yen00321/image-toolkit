@@ -24,12 +24,17 @@ export default function TermsPage() {
       title="Terms of Use"
       description="These terms explain the basic rules for using Image Toolkit and its browser-based image tools."
     >
-      <p>Last updated: June 25, 2026</p>
+      <p>Last updated: July 27, 2026</p>
 
       <h2>Use of the Website</h2>
       <p>
         By using Image Toolkit, you agree to use the website responsibly and only process images that you own, have
         permission to use, or are legally allowed to edit.
+      </p>
+      <p>
+        The tools are intended for normal image preparation tasks such as resizing, compression, conversion, cropping,
+        simple editing, PDF image workflows, social media image sizes, and metadata cleanup. You should not use the site
+        to process illegal, abusive, infringing, deceptive, or harmful content.
       </p>
 
       <h2>User Responsibility</h2>
@@ -43,11 +48,41 @@ export default function TermsPage() {
         The tools are provided on an as-is and as-available basis. We aim to make the website useful and reliable, but
         we do not guarantee that every browser, file, format, or workflow will work perfectly.
       </p>
+      <p>
+        Browser support can vary for HEIC, TIFF, AVIF, PDF, ICO, animated images, very large files, and files with unusual
+        metadata. If your browser cannot decode a file locally, Image Toolkit may not be able to process it.
+      </p>
+
+      <h2>Output Files</h2>
+      <p>
+        Image Toolkit exports new files based on the settings you choose. You are responsible for reviewing the output
+        before publishing, uploading, printing, or sharing it. Keep your original files when quality, records, or future
+        editing matter.
+      </p>
+
+      <h2>Intellectual Property</h2>
+      <p>
+        You keep the rights to images that you process. You are responsible for making sure you have the legal right to
+        edit, convert, download, publish, or share those images.
+      </p>
 
       <h2>No Professional Advice</h2>
       <p>
         Image Toolkit provides technical image utilities. It does not provide legal, financial, design, or marketing
         advice.
+      </p>
+
+      <h2>Advertising and Analytics</h2>
+      <p>
+        The website may use analytics and advertising services to support the free tools and improve the product. These
+        services are subject to their own terms and policies.
+      </p>
+
+      <h2>Limitation of Liability</h2>
+      <p>
+        To the fullest extent allowed by law, Image Toolkit is not responsible for lost files, damaged outputs,
+        publishing mistakes, platform upload issues, or other losses related to use of the tools. Always keep backup
+        copies of important files.
       </p>
 
       <h2>Changes to the Terms</h2>

@@ -95,6 +95,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 title="Site"
                 links={[
                   ["/guides", "Guides"],
+                  ["/faq", "FAQ"],
                   ["/about", "About"],
                   ["/privacy-policy", "Privacy Policy"],
                   ["/terms", "Terms"],

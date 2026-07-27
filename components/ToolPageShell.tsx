@@ -5,6 +5,7 @@ import { ResponsiveAd, ToolPageAd } from "@/components/ads/AdUnits";
 import { Faq } from "@/components/Faq";
 import { useI18n } from "@/components/LanguageProvider";
 import { siteConfig, tools, type ToolInfo } from "@/lib/site";
+import { getToolContent } from "@/lib/tool-content";
 import Link from "next/link";
 
 type ToolPageShellProps = {
@@ -15,15 +16,20 @@ type ToolPageShellProps = {
 export function ToolPageShell({ tool, children }: ToolPageShellProps) {
   const { t, toolText } = useI18n();
   const text = toolText(tool);
-  const howToSteps = tool.howTo ?? [
+  const customContent = getToolContent(tool.slug);
+  const howToSteps = customContent?.howTo ?? tool.howTo ?? [
     `Upload an image for ${tool.name}.`,
     "Adjust the available settings in the browser.",
     "Preview the result before downloading.",
     "Download the finished image file.",
   ];
-  const enrichedFaqs = getEnrichedFaqs(tool);
+  const enrichedFaqs = getEnrichedFaqs(tool, customContent?.faqs);
   const relatedTools = getRelatedTools(tool);
   const pageUrl = `${siteConfig.url}${tool.href}`;
+  const toolExplanation = customContent?.explanation ?? getToolExplanation(tool);
+  const keyFeatures = customContent?.features ?? getKeyFeatures(tool);
+  const supportedFormats = customContent?.supportedFormats ?? getSupportedFormats(tool);
+  const privacyNote = customContent?.privacyNote ?? getPrivacyNote();
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -101,7 +107,7 @@ export function ToolPageShell({ tool, children }: ToolPageShellProps) {
         <div>
           <h2 className="text-2xl font-extrabold text-ink">What is this tool?</h2>
           <div className="mt-3 grid gap-4 text-sm leading-7 text-muted">
-            {getToolExplanation(tool).map((paragraph) => (
+            {toolExplanation.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
@@ -127,7 +133,7 @@ export function ToolPageShell({ tool, children }: ToolPageShellProps) {
         <div className="rounded-lg border border-line bg-white p-6 shadow-soft lg:col-span-2">
           <h2 className="text-2xl font-extrabold text-ink">Key features</h2>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-            {getKeyFeatures(tool).map((feature) => (
+            {keyFeatures.map((feature) => (
               <li key={feature} className="rounded-lg border border-line bg-slate-50 p-4 text-sm leading-6 text-muted">
                 {feature}
               </li>
@@ -136,17 +142,12 @@ export function ToolPageShell({ tool, children }: ToolPageShellProps) {
         </div>
         <div className="rounded-lg border border-line bg-white p-6 shadow-soft">
           <h2 className="text-2xl font-extrabold text-ink">Supported formats</h2>
-          <p className="mt-3 text-sm leading-7 text-muted">{getSupportedFormats(tool)}</p>
+          <p className="mt-3 text-sm leading-7 text-muted">{supportedFormats}</p>
         </div>
       </section>
       <section className="mt-10 rounded-lg border border-line bg-white p-6 shadow-soft">
         <h2 className="text-2xl font-extrabold text-ink">Privacy note</h2>
-        <p className="mt-3 text-sm leading-7 text-muted">
-          ImageToolkit is designed to process this task in your browser whenever possible. Your selected image is
-          handled locally for browser-supported formats, so you can preview and download a new file without sending the
-          original image to an ImageToolkit server. Some file types depend on browser decoding support, and very large
-          files may require more device memory, but the product direction remains browser-based and privacy-friendly.
-        </p>
+        <p className="mt-3 text-sm leading-7 text-muted">{privacyNote}</p>
       </section>
       <ToolPageAd />
       <ResponsiveAd />
@@ -270,7 +271,11 @@ function getSupportedFormats(tool: ToolInfo) {
   return "Most tools support common browser-readable image formats such as JPG, PNG, WebP, AVIF, BMP, SVG, and GIF still frames where the browser can decode them.";
 }
 
-function getEnrichedFaqs(tool: ToolInfo) {
+function getPrivacyNote() {
+  return "ImageToolkit is designed to process this task in your browser whenever possible. Your selected image is handled locally for browser-supported formats, so you can preview and download a new file without sending the original image to an ImageToolkit server. Some file types depend on browser decoding support, and very large files may require more device memory, but the product direction remains browser-based and privacy-friendly.";
+}
+
+function getEnrichedFaqs(tool: ToolInfo, customFaqs?: Array<{ question: string; answer: string }>) {
   const fallbackFaqs = [
     {
       question: `Is ${tool.name} free to use?`,
@@ -297,7 +302,7 @@ function getEnrichedFaqs(tool: ToolInfo) {
         "JPG, PNG, and WebP are the most reliable formats for browser-based image processing. Advanced formats depend on browser support.",
     },
   ];
-  const merged = [...tool.faqs];
+  const merged = customFaqs?.length ? [...customFaqs] : [...tool.faqs];
 
   for (const faq of fallbackFaqs) {
     if (merged.length >= 5) break;
