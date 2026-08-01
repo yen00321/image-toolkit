@@ -430,7 +430,7 @@ Latest Phase 2 batch:
 Latest phase:
 
 - AdSense review-safe content pass
-- Status: complete locally; pending commit, push, and production verification
+- Status: deployed to production and submitted for AdSense review
 
 Latest AdSense review-safe verification on 2026-07-27:
 
@@ -441,10 +441,34 @@ Latest AdSense review-safe verification on 2026-07-27:
 - Confirmed sitemap build output includes `https://www.imagetoolkitapp.com/faq`.
 - Build note: Next.js still reports non-blocking `<img>` warnings in PDF preview components.
 
+Latest AdSense resubmission check on 2026-08-01:
+
+- Public Google search checks no longer show old placeholder snippets for:
+  - `site:imagetoolkitapp.com "Sidebar ad placeholder"`
+  - `site:imagetoolkitapp.com "Advertisement placeholder"`
+  - `site:imagetoolkitapp.com "In-article ad placeholder"`
+- Production spot checks passed:
+  - `/`
+  - `/faq`
+  - `/hue-adjust`
+  - `/image-resizer`
+  - `/image-compressor`
+  - `/privacy-policy`
+- Confirmed checked production pages return `200`.
+- Confirmed checked production pages do not contain old visible ad placeholder phrases.
+- Confirmed AdSense publisher script remains present on production pages.
+- Confirmed `https://www.imagetoolkitapp.com/ads.txt` returns:
+  - `google.com, pub-4691862928355691, DIRECT, f08c47fec0942fa0`
+- Confirmed `https://www.imagetoolkitapp.com/sitemap.xml` works, includes `/faq`, and does not contain `example.com`.
+- Confirmed `https://www.imagetoolkitapp.com/robots.txt` allows crawling and points to the www sitemap.
+- User submitted the site for AdSense review after these checks.
+
 Next phase:
 
-- After deployment, request Search Console indexing for the homepage, `/faq`, `/about`, `/privacy-policy`, `/terms`, `/contact`, `/guides`, and the highest-value tool pages.
-- Wait for Google to refresh snippets so old ad placeholder text is no longer visible before requesting AdSense review again.
+- Wait for the new AdSense review result.
+- Avoid major site changes while review is pending.
+- If AdSense approves, configure real ad slots and set `NEXT_PUBLIC_ADSENSE_REVIEW_MODE=false`.
+- If AdSense rejects again, review the exact rejection reason and continue improving non-template content depth on remaining tool pages.
 
 Development server was started on:
 
@@ -470,12 +494,12 @@ Note: Browser automation could not inspect `127.0.0.1:3000` because the in-app b
 
 ## Recommended Next Steps
 
-1. Deploy the review-safe content pass to production and verify `/faq`, key tool pages, `ads.txt`, sitemap, robots, GA4, and AdSense script.
-2. Request Search Console indexing for updated trust pages, guides, and key tool pages.
-3. Wait until Google snippets no longer show old ad placeholder text before requesting AdSense review.
-4. Continue replacing template-style content on remaining social and edit tools after AdSense status is clear.
-5. Add proper multilingual SEO routes and `hreflang`.
-6. Add real AdSense ad slot IDs after approval/configuration, then set `NEXT_PUBLIC_ADSENSE_REVIEW_MODE=false`.
+1. Do not make major layout, metadata, AdSense, robots, sitemap, canonical, or URL changes while AdSense review is pending.
+2. Monitor AdSense review status.
+3. Monitor Search Console for major indexing or page experience issues.
+4. If approved, add real AdSense ad slot IDs and set `NEXT_PUBLIC_ADSENSE_REVIEW_MODE=false`.
+5. If rejected again, inspect the exact policy reason and continue replacing template-style content on remaining tools.
+6. Later, add proper multilingual SEO routes and `hreflang`.
 
 ## Important Files
 
