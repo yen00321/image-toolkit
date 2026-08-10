@@ -495,11 +495,29 @@ Latest AdSense rejection follow-up on 2026-08-10:
   - Built `/hue-adjust` has `meta name="robots" content="noindex, follow"`.
   - Built `/image-resizer` has `meta name="robots" content="index, follow"`.
 
+Content-depth follow-up on 2026-08-10:
+
+- Started the low-value-content cleanup by upgrading existing tool pages instead of adding new tools.
+- Added unique, format-specific content for the first 10 format converter pages:
+  - `/heic-to-jpg`
+  - `/heic-to-png`
+  - `/avif-to-jpg`
+  - `/avif-to-png`
+  - `/svg-to-png`
+  - `/svg-to-jpg`
+  - `/bmp-to-jpg`
+  - `/bmp-to-png`
+  - `/tiff-to-jpg`
+  - `/tiff-to-png`
+- Each upgraded page now has custom explanation paragraphs, practical use cases, step-by-step usage, key features, supported-format notes, browser privacy notes, and at least 5 FAQs.
+- Added these 10 upgraded pages back to the review-mode indexable tool list so sitemap/internal navigation can expose them after the content upgrade.
+- Remaining thin pages should stay `noindex, follow` until they receive similar custom content.
+
 Next phase:
 
-- Deploy the lean review index pass to production.
-- Verify production sitemap, noindex tags, core pages, `ads.txt`, robots, and AdSense script.
-- In Search Console, request indexing for the homepage, `/faq`, guides, and the 11 indexable tool pages.
+- Continue expanding custom content in small batches before exposing more tool pages to indexing.
+- Verify production sitemap, noindex tags, core pages, `ads.txt`, robots, and AdSense script after each batch.
+- In Search Console, request indexing for the homepage, `/faq`, guides, and upgraded indexable tool pages.
 - Request temporary removal / re-crawl for old thin pages only if Google keeps showing them prominently.
 - Wait for Google to refresh the indexed URL set before requesting AdSense review again.
 - If AdSense approves, configure real ad slots and set `NEXT_PUBLIC_ADSENSE_REVIEW_MODE=false`.

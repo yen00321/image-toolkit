@@ -118,6 +118,27 @@ NEXT_PUBLIC_SITE_URL=https://www.imagetoolkitapp.com
 
 This value is used for sitemap and metadata URLs.
 
+## AdSense Review Content Pass
+
+During AdSense review, the site keeps the full tool set available but only exposes stronger, higher-depth tool pages to indexing and sitemap output by default. Review mode is enabled unless:
+
+```bash
+NEXT_PUBLIC_ADSENSE_REVIEW_MODE=false
+```
+
+The first expanded content batch adds unique tool-page copy, format-specific guidance, privacy notes, supported-format explanations, and FAQ content for:
+
+- HEIC to JPG
+- HEIC to PNG
+- AVIF to JPG
+- AVIF to PNG
+- SVG to PNG
+- SVG to JPG
+- BMP to JPG
+- BMP to PNG
+- TIFF to JPG
+- TIFF to PNG
+
 Set the Google Analytics 4 Measurement ID in production:
 
 ```bash
