@@ -513,6 +513,19 @@ Content-depth follow-up on 2026-08-10:
 - Added these 10 upgraded pages back to the review-mode indexable tool list so sitemap/internal navigation can expose them after the content upgrade.
 - Remaining thin pages should stay `noindex, follow` until they receive similar custom content.
 
+Second content-depth batch on 2026-08-10:
+
+- Added unique, format-specific content for 6 more converter/icon pages:
+  - `/gif-to-jpg`
+  - `/gif-to-png`
+  - `/png-to-ico`
+  - `/jpg-to-ico`
+  - `/webp-to-png`
+  - `/ico-converter`
+- Each upgraded page now has custom explanation paragraphs, workflow guidance, format limitations, supported-format notes, privacy copy, key features, and at least 5 FAQs.
+- Added these 6 upgraded pages to the review-mode indexable tool list.
+- Review-mode sitemap should now expose 27 stronger tool pages plus high-value static, guide, and category pages.
+
 Next phase:
 
 - Continue expanding custom content in small batches before exposing more tool pages to indexing.

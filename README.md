@@ -139,6 +139,15 @@ The first expanded content batch adds unique tool-page copy, format-specific gui
 - TIFF to JPG
 - TIFF to PNG
 
+The second expanded content batch adds the same higher-depth treatment for:
+
+- GIF to JPG
+- GIF to PNG
+- PNG to ICO
+- JPG to ICO
+- WebP to PNG
+- ICO Converter
+
 Set the Google Analytics 4 Measurement ID in production:
 
 ```bash
