@@ -526,6 +526,19 @@ Second content-depth batch on 2026-08-10:
 - Added these 6 upgraded pages to the review-mode indexable tool list.
 - Review-mode sitemap should now expose 27 stronger tool pages plus high-value static, guide, and category pages.
 
+Third content-depth batch on 2026-08-10:
+
+- Added unique, practical editing-focused content for 6 tool pages:
+  - `/rotate-image`
+  - `/flip-image`
+  - `/mirror-image`
+  - `/resize-canvas`
+  - `/crop-circle-image`
+  - `/add-watermark`
+- Each upgraded page now explains real usage scenarios, output behavior, format limitations, privacy handling, key features, and at least 5 FAQs.
+- Added these 6 upgraded pages to the review-mode indexable tool list.
+- Remaining editing/filter pages should stay `noindex, follow` until they receive similar custom content.
+
 Next phase:
 
 - Continue expanding custom content in small batches before exposing more tool pages to indexing.

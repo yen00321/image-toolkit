@@ -28,6 +28,12 @@ export const reviewIndexableToolSlugs = [
   "youtube-thumbnail-resizer",
   "pdf-to-images",
   "images-to-pdf",
+  "rotate-image",
+  "flip-image",
+  "mirror-image",
+  "resize-canvas",
+  "crop-circle-image",
+  "add-watermark",
 ] as const;
 
 const reviewIndexableSet = new Set<string>(reviewIndexableToolSlugs);

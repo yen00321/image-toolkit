@@ -148,6 +148,15 @@ The second expanded content batch adds the same higher-depth treatment for:
 - WebP to PNG
 - ICO Converter
 
+The third expanded content batch improves practical editing tools:
+
+- Rotate Image
+- Flip Image
+- Mirror Image
+- Resize Canvas
+- Crop Circle Image
+- Add Watermark
+
 Set the Google Analytics 4 Measurement ID in production:
 
 ```bash
