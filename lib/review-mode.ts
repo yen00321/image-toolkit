@@ -34,6 +34,12 @@ export const reviewIndexableToolSlugs = [
   "resize-canvas",
   "crop-circle-image",
   "add-watermark",
+  "blur-image",
+  "sharpen-image",
+  "brightness-adjust",
+  "contrast-adjust",
+  "saturation-adjust",
+  "hue-adjust",
 ] as const;
 
 const reviewIndexableSet = new Set<string>(reviewIndexableToolSlugs);

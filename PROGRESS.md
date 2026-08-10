@@ -539,6 +539,19 @@ Third content-depth batch on 2026-08-10:
 - Added these 6 upgraded pages to the review-mode indexable tool list.
 - Remaining editing/filter pages should stay `noindex, follow` until they receive similar custom content.
 
+Fourth content-depth batch on 2026-08-10:
+
+- Added unique, higher-depth content for 6 filter and photo adjustment pages:
+  - `/blur-image`
+  - `/sharpen-image`
+  - `/brightness-adjust`
+  - `/contrast-adjust`
+  - `/saturation-adjust`
+  - `/hue-adjust`
+- Each page now explains when the adjustment is useful, when it is risky, how it affects output quality, how it differs from related edits, privacy behavior, key features, and at least 5 FAQs.
+- Added these 6 upgraded pages to the review-mode indexable tool list.
+- This specifically fixes the earlier risk where `/hue-adjust` was visible as a thin template-style page.
+
 Next phase:
 
 - Continue expanding custom content in small batches before exposing more tool pages to indexing.

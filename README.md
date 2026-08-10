@@ -157,6 +157,15 @@ The third expanded content batch improves practical editing tools:
 - Crop Circle Image
 - Add Watermark
 
+The fourth expanded content batch improves photo adjustment and filter tools:
+
+- Blur Image
+- Sharpen Image
+- Brightness Adjust
+- Contrast Adjust
+- Saturation Adjust
+- Hue Adjust
+
 Set the Google Analytics 4 Measurement ID in production:
 
 ```bash
