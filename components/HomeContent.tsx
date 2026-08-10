@@ -56,6 +56,10 @@ export function HomeContent() {
   const searchResults = useMemo(() => searchTools(query).slice(0, 8), [query]);
   const popularTools = useMemo(() => getToolsBySlugs(popularToolSlugs).slice(0, 6), []);
   const recentlyAddedTools = useMemo(() => getRecentlyAddedTools(4), []);
+  const visibleCategories = useMemo(
+    () => toolCategoryGroups.filter((category) => getCategoryTools(category).length > 0),
+    [],
+  );
 
   return (
     <main>
@@ -133,7 +137,7 @@ export function HomeContent() {
           </p>
         </div>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {toolCategoryGroups.map((category) => {
+          {visibleCategories.map((category) => {
             const count = getCategoryTools(category).length;
 
             return (

@@ -314,11 +314,17 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 
   const content = categoryContent[category.id];
   const url = `${siteConfig.url}${category.href}`;
+  const categoryTools = getCategoryTools(category);
+  const isIndexable = categoryTools.length > 0;
 
   return {
     title: content.seoTitle,
     description: content.metaDescription,
     keywords: category.keywords,
+    robots: {
+      index: isIndexable,
+      follow: true,
+    },
     alternates: {
       canonical: url,
     },
@@ -347,7 +353,9 @@ export default async function ToolCategoryPage({ params }: CategoryPageProps) {
   const content = categoryContent[category.id];
   const categoryTools = getCategoryTools(category);
   const pageUrl = `${siteConfig.url}${category.href}`;
-  const relatedCategories = toolCategoryGroups.filter((group) => group.id !== category.id).slice(0, 4);
+  const relatedCategories = toolCategoryGroups
+    .filter((group) => group.id !== category.id && getCategoryTools(group).length > 0)
+    .slice(0, 4);
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -424,24 +432,30 @@ export default async function ToolCategoryPage({ params }: CategoryPageProps) {
       <section className="mt-10">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-bold uppercase tracking-wide text-brand">{categoryTools.length} tools</p>
+            <p className="text-sm font-bold uppercase tracking-wide text-brand">
+              {categoryTools.length ? `${categoryTools.length} tools` : "Content review mode"}
+            </p>
             <h2 className="mt-2 text-3xl font-extrabold tracking-normal text-ink">{category.name} tools</h2>
           </div>
           <p className="max-w-xl text-sm leading-6 text-muted">
-            Choose a tool below, upload your file, preview the result, and download a new image or document output.
+            {categoryTools.length
+              ? "Choose a tool below, upload your file, preview the result, and download a new image or document output."
+              : "This category is being expanded with deeper tool content before it is promoted in search and sitemap navigation."}
           </p>
         </div>
         <ResponsiveAd />
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {categoryTools.map((tool, index) => (
-            <div key={tool.slug} className="contents">
-              <ToolCard tool={tool} />
-              {(index + 1) % 12 === 0 && index + 1 < categoryTools.length ? (
-                <ResponsiveAd className="sm:col-span-2 lg:col-span-3" />
-              ) : null}
-            </div>
-          ))}
-        </div>
+        {categoryTools.length ? (
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {categoryTools.map((tool, index) => (
+              <div key={tool.slug} className="contents">
+                <ToolCard tool={tool} />
+                {(index + 1) % 12 === 0 && index + 1 < categoryTools.length ? (
+                  <ResponsiveAd className="sm:col-span-2 lg:col-span-3" />
+                ) : null}
+              </div>
+            ))}
+          </div>
+        ) : null}
       </section>
 
       <section className="mt-10 rounded-lg border border-line bg-white p-6 shadow-soft">

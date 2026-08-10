@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
+import { isToolIndexableForReview } from "@/lib/review-mode";
 import type { ToolInfo } from "@/lib/site";
 import { siteConfig } from "@/lib/site";
 
 export function toolMetadata(tool: ToolInfo): Metadata {
+  const isIndexable = isToolIndexableForReview(tool);
+
   return {
     title: tool.metaTitle,
     description: tool.metaDescription,
     keywords: tool.keywords,
+    robots: {
+      index: isIndexable,
+      follow: true,
+    },
     alternates: {
       canonical: `${siteConfig.url}${tool.href}`,
     },

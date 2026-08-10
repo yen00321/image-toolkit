@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { ResponsiveAd, ToolPageAd } from "@/components/ads/AdUnits";
 import { Faq } from "@/components/Faq";
 import { useI18n } from "@/components/LanguageProvider";
+import { filterToolsForReview } from "@/lib/review-mode";
 import { siteConfig, tools, type ToolInfo } from "@/lib/site";
 import { getToolContent } from "@/lib/tool-content";
 import Link from "next/link";
@@ -177,12 +178,15 @@ function getRelatedTools(tool: ToolInfo) {
     ?.map((slug) => tools.find((candidate) => candidate.slug === slug))
     .filter((candidate): candidate is ToolInfo => Boolean(candidate));
 
-  const base = explicit?.length
-    ? explicit
-    : tools.filter((candidate) => candidate.slug !== tool.slug && candidate.category === tool.category);
+  const reviewTools = filterToolsForReview(tools).filter((candidate) => candidate.slug !== tool.slug);
+  const explicitFiltered = explicit?.filter((candidate) => reviewTools.some((item) => item.slug === candidate.slug));
 
-  const fallback = tools.filter(
-    (candidate) => candidate.slug !== tool.slug && !base.some((item) => item.slug === candidate.slug),
+  const base = explicitFiltered?.length
+    ? explicitFiltered
+    : reviewTools.filter((candidate) => candidate.category === tool.category);
+
+  const fallback = reviewTools.filter(
+    (candidate) => !base.some((item) => item.slug === candidate.slug),
   );
 
   return [...base, ...fallback].slice(0, 4);

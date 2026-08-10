@@ -1,11 +1,14 @@
 import type { MetadataRoute } from "next";
 import { guideArticles } from "@/lib/guide-articles";
+import { filterToolsForReview } from "@/lib/review-mode";
 import { siteConfig, tools } from "@/lib/site";
-import { toolCategoryGroups } from "@/lib/tool-categories";
+import { getCategoryTools, toolCategoryGroups } from "@/lib/tool-categories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticPages = ["/about", "/privacy-policy", "/terms", "/contact", "/faq", "/guides"];
+  const sitemapTools = filterToolsForReview(tools);
+  const sitemapCategories = toolCategoryGroups.filter((category) => getCategoryTools(category).length > 0);
 
   return [
     {
@@ -20,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly" as const,
       priority: 0.5,
     })),
-    ...toolCategoryGroups.map((category) => ({
+    ...sitemapCategories.map((category) => ({
       url: `${siteConfig.url}${category.href}`,
       lastModified: now,
       changeFrequency: "weekly" as const,
@@ -32,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.75,
     })),
-    ...tools.map((tool) => ({
+    ...sitemapTools.map((tool) => ({
       url: `${siteConfig.url}${tool.href}`,
       lastModified: now,
       changeFrequency: "monthly" as const,

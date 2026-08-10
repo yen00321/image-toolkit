@@ -276,6 +276,8 @@ Completed:
 - Expanded About, Privacy Policy, Terms, and Contact pages with clearer trust, privacy, format support, and tool limitation details.
 - Added custom non-template content for the most important tool pages, including resizing, compression, cropping, core converters, Instagram, YouTube thumbnail, and PDF workflows.
 - Verified the review-safe production build generates 89 pages successfully, including `/faq`.
+- Added a lean AdSense review index mode: only high-depth tool pages are included in sitemap and ordinary navigation during review, while remaining template-style tool pages keep working but receive `noindex, follow`.
+- Review-mode sitemap now prioritizes trust pages, guide articles, category pages with indexable tools, and 11 high-value tool pages.
 
 ## Phase 2 Expansion
 

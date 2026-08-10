@@ -429,8 +429,8 @@ Latest Phase 2 batch:
 
 Latest phase:
 
-- AdSense review-safe content pass
-- Status: deployed to production and submitted for AdSense review
+- AdSense lean index review pass
+- Status: implemented locally after another low-value-content rejection; pending commit, push, production verification, and Search Console resubmission
 
 Latest AdSense review-safe verification on 2026-07-27:
 
@@ -463,12 +463,47 @@ Latest AdSense resubmission check on 2026-08-01:
 - Confirmed `https://www.imagetoolkitapp.com/robots.txt` allows crawling and points to the www sitemap.
 - User submitted the site for AdSense review after these checks.
 
+Latest AdSense rejection follow-up on 2026-08-10:
+
+- AdSense review still failed with low-value-content / lack-of-value-content messaging.
+- Stronger diagnosis: remaining risk is likely the large number of similar, template-style tool pages still visible to crawlers and internal navigation.
+- Implemented lean review indexing:
+  - Added `lib/review-mode.ts`.
+  - Review mode defaults on unless `NEXT_PUBLIC_ADSENSE_REVIEW_MODE=false`.
+  - Only 11 high-depth tool pages are treated as indexable during review:
+    - `/image-resizer`
+    - `/image-compressor`
+    - `/crop-image`
+    - `/jpg-to-png`
+    - `/png-to-jpg`
+    - `/image-to-webp`
+    - `/webp-to-jpg`
+    - `/instagram-resizer`
+    - `/youtube-thumbnail-resizer`
+    - `/pdf-to-images`
+    - `/images-to-pdf`
+  - Other tool pages remain accessible but receive `noindex, follow`.
+  - Homepage search, category cards, category tool lists, related tools, Recently Added, and sitemap now use the review-mode filtered tool set.
+  - Category pages with zero review-indexable tools receive `noindex, follow` and are removed from sitemap.
+- Local verification:
+  - `npm.cmd run typecheck`
+  - `npm.cmd run build`
+  - Next generated 89 static pages successfully.
+  - Build sitemap output now contains 34 URLs.
+  - Build sitemap output no longer includes `/hue-adjust`.
+  - Build sitemap output still includes `/image-resizer`, `/image-compressor`, `/faq`, and guide pages.
+  - Built `/hue-adjust` has `meta name="robots" content="noindex, follow"`.
+  - Built `/image-resizer` has `meta name="robots" content="index, follow"`.
+
 Next phase:
 
-- Wait for the new AdSense review result.
-- Avoid major site changes while review is pending.
+- Deploy the lean review index pass to production.
+- Verify production sitemap, noindex tags, core pages, `ads.txt`, robots, and AdSense script.
+- In Search Console, request indexing for the homepage, `/faq`, guides, and the 11 indexable tool pages.
+- Request temporary removal / re-crawl for old thin pages only if Google keeps showing them prominently.
+- Wait for Google to refresh the indexed URL set before requesting AdSense review again.
 - If AdSense approves, configure real ad slots and set `NEXT_PUBLIC_ADSENSE_REVIEW_MODE=false`.
-- If AdSense rejects again, review the exact rejection reason and continue improving non-template content depth on remaining tool pages.
+- If AdSense rejects again, expand custom content to the next batch of tool pages before re-enabling their indexability.
 
 Development server was started on:
 
@@ -494,12 +529,13 @@ Note: Browser automation could not inspect `127.0.0.1:3000` because the in-app b
 
 ## Recommended Next Steps
 
-1. Do not make major layout, metadata, AdSense, robots, sitemap, canonical, or URL changes while AdSense review is pending.
-2. Monitor AdSense review status.
-3. Monitor Search Console for major indexing or page experience issues.
-4. If approved, add real AdSense ad slot IDs and set `NEXT_PUBLIC_ADSENSE_REVIEW_MODE=false`.
-5. If rejected again, inspect the exact policy reason and continue replacing template-style content on remaining tools.
-6. Later, add proper multilingual SEO routes and `hreflang`.
+1. Push and deploy the lean review index pass.
+2. Verify production sitemap is reduced and thin tool pages have `noindex, follow`.
+3. Request Search Console indexing for the core indexable pages.
+4. Wait for Google to refresh the indexed URL set before another AdSense review.
+5. If approved, add real AdSense ad slot IDs and set `NEXT_PUBLIC_ADSENSE_REVIEW_MODE=false`.
+6. If rejected again, inspect the exact policy reason and continue replacing template-style content on remaining tools.
+7. Later, add proper multilingual SEO routes and `hreflang`.
 
 ## Important Files
 

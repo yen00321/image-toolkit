@@ -1,3 +1,4 @@
+import { filterToolsForReview, isToolIndexableForReview, reviewIndexableToolSlugs } from "@/lib/review-mode";
 import { tools, type ToolInfo } from "@/lib/site";
 
 export type ToolCategoryGroupId =
@@ -146,11 +147,13 @@ export const popularToolSlugs = [
 ];
 
 export function getToolsBySlugs(slugs: string[]) {
-  return slugs.map((slug) => tools.find((tool) => tool.slug === slug)).filter(Boolean) as ToolInfo[];
+  return filterToolsForReview(
+    slugs.map((slug) => tools.find((tool) => tool.slug === slug)).filter(Boolean) as ToolInfo[],
+  );
 }
 
 export function getRecentlyAddedTools(limit = 8) {
-  return tools.slice(-limit).reverse();
+  return getToolsBySlugs([...reviewIndexableToolSlugs].reverse()).slice(0, limit);
 }
 
 export function getCategoryTools(category: ToolCategoryGroup) {
@@ -169,6 +172,10 @@ export function searchTools(query: string) {
   }
 
   return tools.filter((tool) => {
+    if (!isToolIndexableForReview(tool)) {
+      return false;
+    }
+
     const category = toolCategoryGroups.find((group) => group.toolSlugs.includes(tool.slug));
     const haystack = [
       tool.name,
