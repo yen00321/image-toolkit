@@ -40,6 +40,11 @@ export const reviewIndexableToolSlugs = [
   "contrast-adjust",
   "saturation-adjust",
   "hue-adjust",
+  "grayscale-filter",
+  "sepia-filter",
+  "invert-colors",
+  "pixelate-image",
+  "remove-exif-metadata",
 ] as const;
 
 const reviewIndexableSet = new Set<string>(reviewIndexableToolSlugs);

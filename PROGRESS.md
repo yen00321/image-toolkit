@@ -552,6 +552,18 @@ Fourth content-depth batch on 2026-08-10:
 - Added these 6 upgraded pages to the review-mode indexable tool list.
 - This specifically fixes the earlier risk where `/hue-adjust` was visible as a thin template-style page.
 
+Fifth content-depth batch on 2026-08-10:
+
+- Added unique content for the remaining effect and privacy editing pages:
+  - `/grayscale-filter`
+  - `/sepia-filter`
+  - `/invert-colors`
+  - `/pixelate-image`
+  - `/remove-exif-metadata`
+- Each page now includes specific use cases, realistic limitations, quality and privacy notes, related-tool comparisons, supported formats, browser privacy messaging, and at least 5 FAQs.
+- Added these 5 upgraded pages to the review-mode indexable tool list.
+- This removes the previous thin-page risk for `/pixelate-image` and improves the privacy value of `/remove-exif-metadata`.
+
 Next phase:
 
 - Continue expanding custom content in small batches before exposing more tool pages to indexing.

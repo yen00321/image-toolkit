@@ -166,6 +166,14 @@ The fourth expanded content batch improves photo adjustment and filter tools:
 - Saturation Adjust
 - Hue Adjust
 
+The fifth expanded content batch completes the remaining effect and privacy tools:
+
+- Grayscale Filter
+- Sepia Filter
+- Invert Colors
+- Pixelate Image
+- Remove EXIF Metadata
+
 Set the Google Analytics 4 Measurement ID in production:
 
 ```bash
