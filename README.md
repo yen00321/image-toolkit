@@ -343,6 +343,7 @@ Completed:
 - Verified the review-safe production build generates 89 pages successfully, including `/faq`.
 - Added a lean AdSense review index mode: only high-depth tool pages are included in sitemap and ordinary navigation during review, while remaining template-style tool pages keep working but receive `noindex, follow`.
 - Review-mode sitemap now prioritizes trust pages, guide articles, category pages with indexable tools, and 11 high-value tool pages.
+- Continued expanding tool-page content in focused batches. YouTube banner, YouTube Shorts thumbnail, TikTok profile picture, LinkedIn banner, LinkedIn profile picture, and X header now have platform-specific guidance, safe-area notes, privacy explanations, supported formats, and custom FAQs before being exposed in the review-mode sitemap.
 
 ## Phase 2 Expansion
 

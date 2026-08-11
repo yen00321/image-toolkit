@@ -577,6 +577,19 @@ Sixth content-depth batch on 2026-08-11:
 - Added these 6 upgraded social pages to the review-mode indexable tool list.
 - Remaining social sizing tools should stay `noindex, follow` until they receive similar platform-specific content.
 
+Seventh content-depth batch on 2026-08-11:
+
+- Continued social media content expansion with video and professional profile pages:
+  - `/youtube-banner`
+  - `/youtube-shorts-thumbnail`
+  - `/tiktok-profile-picture`
+  - `/linkedin-banner`
+  - `/linkedin-profile-picture`
+  - `/x-header`
+- Each page now includes platform-specific layout guidance, safe-area and profile-overlap notes, practical use cases, supported formats, browser privacy messaging, and at least 5 custom FAQs.
+- Added these 6 upgraded pages to the review-mode indexable tool list.
+- Remaining social pages such as `/x-profile-picture`, `/pinterest-pin-resizer`, and `/discord-avatar-resizer` should stay `noindex, follow` until custom content is added.
+
 Next phase:
 
 - Continue expanding custom content in small batches before exposing more tool pages to indexing.
