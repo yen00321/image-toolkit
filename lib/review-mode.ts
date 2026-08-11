@@ -45,6 +45,12 @@ export const reviewIndexableToolSlugs = [
   "invert-colors",
   "pixelate-image",
   "remove-exif-metadata",
+  "instagram-story-resizer",
+  "instagram-reel-cover",
+  "instagram-profile-picture",
+  "facebook-cover-photo",
+  "facebook-profile-picture",
+  "facebook-post-resizer",
 ] as const;
 
 const reviewIndexableSet = new Set<string>(reviewIndexableToolSlugs);

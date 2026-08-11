@@ -564,6 +564,19 @@ Fifth content-depth batch on 2026-08-10:
 - Added these 5 upgraded pages to the review-mode indexable tool list.
 - This removes the previous thin-page risk for `/pixelate-image` and improves the privacy value of `/remove-exif-metadata`.
 
+Sixth content-depth batch on 2026-08-11:
+
+- Started social media tool-page content expansion with Instagram and Facebook pages:
+  - `/instagram-story-resizer`
+  - `/instagram-reel-cover`
+  - `/instagram-profile-picture`
+  - `/facebook-cover-photo`
+  - `/facebook-profile-picture`
+  - `/facebook-post-resizer`
+- Each page now includes platform-specific use cases, aspect-ratio guidance, crop/safe-area notes, output behavior, privacy messaging, supported formats, and at least 5 FAQs.
+- Added these 6 upgraded social pages to the review-mode indexable tool list.
+- Remaining social sizing tools should stay `noindex, follow` until they receive similar platform-specific content.
+
 Next phase:
 
 - Continue expanding custom content in small batches before exposing more tool pages to indexing.

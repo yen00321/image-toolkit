@@ -174,6 +174,15 @@ The fifth expanded content batch completes the remaining effect and privacy tool
 - Pixelate Image
 - Remove EXIF Metadata
 
+The sixth expanded content batch starts social media sizing pages:
+
+- Instagram Story Resizer
+- Instagram Reel Cover
+- Instagram Profile Picture
+- Facebook Cover Photo
+- Facebook Profile Picture
+- Facebook Post Resizer
+
 Set the Google Analytics 4 Measurement ID in production:
 
 ```bash
