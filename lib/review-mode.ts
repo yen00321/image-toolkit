@@ -57,6 +57,10 @@ export const reviewIndexableToolSlugs = [
   "linkedin-banner",
   "linkedin-profile-picture",
   "x-header",
+  "x-profile-picture",
+  "pinterest-pin-resizer",
+  "discord-avatar-resizer",
+  "tiktok-resizer",
 ] as const;
 
 const reviewIndexableSet = new Set<string>(reviewIndexableToolSlugs);

@@ -6,7 +6,7 @@ import { useI18n } from "@/components/LanguageProvider";
 import { languages, type LanguageCode } from "@/lib/i18n";
 
 const navLinks = [
-  { href: "/#popular-tools", label: "Tools" },
+  { href: "/tools", label: "Tools" },
   { href: "/tools/convert", label: "Categories" },
   { href: "/guides", label: "Guides" },
   { href: "/faq", label: "FAQ" },

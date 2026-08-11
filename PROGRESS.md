@@ -590,6 +590,20 @@ Seventh content-depth batch on 2026-08-11:
 - Added these 6 upgraded pages to the review-mode indexable tool list.
 - Remaining social pages such as `/x-profile-picture`, `/pinterest-pin-resizer`, and `/discord-avatar-resizer` should stay `noindex, follow` until custom content is added.
 
+Eighth content-depth and structure batch on 2026-08-11:
+
+- Completed the final 4 tool content gaps:
+  - `/x-profile-picture`
+  - `/pinterest-pin-resizer`
+  - `/discord-avatar-resizer`
+  - `/tiktok-resizer`
+- All 60 tools now have custom tool-page content, supported formats, privacy notes, practical usage guidance, and at least 5 FAQs.
+- Added the final 4 tools to the review-mode indexable tool list.
+- Added `/tools` as a real all-tools hub page with category cards, all indexable tools, FAQ, WebApplication schema, FAQ schema, and Breadcrumb schema.
+- Updated navigation and footer links so Tools points to `/tools` instead of an in-page homepage anchor.
+- Added `/tools` to `sitemap.xml`.
+- Cleaned up two short filler-like category sentences so category content reads more naturally.
+
 Next phase:
 
 - Continue expanding custom content in small batches before exposing more tool pages to indexing.

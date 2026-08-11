@@ -77,9 +77,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <FooterColumn
                 title="Tools"
                 links={[
+                  ["/tools", "All Tools"],
                   ["/image-resizer", "Image Resizer"],
                   ["/image-compressor", "Image Compressor"],
-                  ["/jpg-to-png", "JPG to PNG"],
                 ]}
               />
               <FooterColumn

@@ -344,6 +344,8 @@ Completed:
 - Added a lean AdSense review index mode: only high-depth tool pages are included in sitemap and ordinary navigation during review, while remaining template-style tool pages keep working but receive `noindex, follow`.
 - Review-mode sitemap now prioritizes trust pages, guide articles, category pages with indexable tools, and 11 high-value tool pages.
 - Continued expanding tool-page content in focused batches. YouTube banner, YouTube Shorts thumbnail, TikTok profile picture, LinkedIn banner, LinkedIn profile picture, and X header now have platform-specific guidance, safe-area notes, privacy explanations, supported formats, and custom FAQs before being exposed in the review-mode sitemap.
+- Completed the remaining social tool content gaps for X Profile Picture, Pinterest Pin Resizer, Discord Avatar Resizer, and TikTok Cover Resizer, so all 60 tools now have custom content before being exposed in review mode.
+- Added `/tools` as a real all-tools hub to support the navigation and category breadcrumb structure.
 
 ## Phase 2 Expansion
 
