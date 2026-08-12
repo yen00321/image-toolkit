@@ -604,6 +604,12 @@ Eighth content-depth and structure batch on 2026-08-11:
 - Added `/tools` to `sitemap.xml`.
 - Cleaned up two short filler-like category sentences so category content reads more naturally.
 
+Ninth quality cleanup batch on 2026-08-12:
+
+- Replaced raw preview `<img>` tags in PDF tools with Next.js `Image` using `unoptimized` for browser-generated blob URLs.
+- Added object URL cleanup for Images to PDF and PDF to Images previews to avoid stale browser memory when users upload new files or leave the page.
+- Goal: remove the remaining production build image warnings without changing GA, AdSense, canonical, robots, sitemap behavior, or existing tool URLs.
+
 Next phase:
 
 - Continue expanding custom content in small batches before exposing more tool pages to indexing.

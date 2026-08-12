@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Download, Images } from "lucide-react";
 import { baseName, downloadBlob, loadImageFile } from "@/lib/image-client";
 
@@ -16,10 +17,17 @@ export function ImagesToPdfTool() {
   const [images, setImages] = useState<PdfImage[]>([]);
   const [status, setStatus] = useState("Upload one or more images to create a PDF.");
 
+  useEffect(() => {
+    return () => {
+      images.forEach((image) => URL.revokeObjectURL(image.url));
+    };
+  }, [images]);
+
   async function handleFiles(files?: FileList | null) {
     if (!files?.length) return;
     const loaded: PdfImage[] = [];
     setStatus("Preparing images in your browser...");
+    images.forEach((image) => URL.revokeObjectURL(image.url));
 
     for (const file of Array.from(files)) {
       const image = await loadImageFile(file);
@@ -90,7 +98,14 @@ export function ImagesToPdfTool() {
           {images.length ? (
             images.map((image, index) => (
               <article key={`${image.name}-${index}`} className="rounded-lg border border-line bg-slate-50 p-3">
-                <img src={image.url} alt={image.name} className="h-48 w-full rounded border border-line object-contain" />
+                <Image
+                  src={image.url}
+                  alt={image.name}
+                  width={image.width}
+                  height={image.height}
+                  unoptimized
+                  className="h-48 w-full rounded border border-line object-contain"
+                />
                 <p className="mt-2 truncate text-sm font-bold text-ink">{image.name}</p>
                 <p className="text-xs text-muted">
                   Page {index + 1} - {image.width} x {image.height}

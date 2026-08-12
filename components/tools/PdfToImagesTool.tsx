@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Download, FileText } from "lucide-react";
 import { downloadBlob } from "@/lib/image-client";
 
@@ -17,6 +18,12 @@ export function PdfToImagesTool() {
   const [pages, setPages] = useState<RenderedPage[]>([]);
   const [status, setStatus] = useState("Upload a PDF file to render pages as PNG images.");
   const [isRendering, setIsRendering] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      pages.forEach((page) => URL.revokeObjectURL(page.url));
+    };
+  }, [pages]);
 
   async function handleFile(file?: File) {
     if (!file) return;
@@ -94,9 +101,12 @@ export function PdfToImagesTool() {
           {pages.length ? (
             pages.map((page) => (
               <article key={page.pageNumber} className="rounded-lg border border-line bg-slate-50 p-3">
-                <img
+                <Image
                   src={page.url}
                   alt={`PDF page ${page.pageNumber}`}
+                  width={page.width}
+                  height={page.height}
+                  unoptimized
                   className="max-h-96 w-full rounded border border-line object-contain"
                 />
                 <div className="mt-3 flex flex-wrap items-center justify-between gap-3 text-sm text-muted">
