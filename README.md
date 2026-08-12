@@ -346,6 +346,7 @@ Completed:
 - Continued expanding tool-page content in focused batches. YouTube banner, YouTube Shorts thumbnail, TikTok profile picture, LinkedIn banner, LinkedIn profile picture, and X header now have platform-specific guidance, safe-area notes, privacy explanations, supported formats, and custom FAQs before being exposed in the review-mode sitemap.
 - Completed the remaining social tool content gaps for X Profile Picture, Pinterest Pin Resizer, Discord Avatar Resizer, and TikTok Cover Resizer, so all 60 tools now have custom content before being exposed in review mode.
 - Added `/tools` as a real all-tools hub to support the navigation and category breadcrumb structure.
+- Added a human-readable `/sitemap` page, expanded tool pages with common use cases and limitations, and improved guide article recommended-tool cards to strengthen user navigation and AdSense review value.
 
 ## Phase 2 Expansion
 

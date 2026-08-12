@@ -6,7 +6,7 @@ import { getCategoryTools, toolCategoryGroups } from "@/lib/tool-categories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticPages = ["/tools", "/about", "/privacy-policy", "/terms", "/contact", "/faq", "/guides"];
+  const staticPages = ["/tools", "/sitemap", "/about", "/privacy-policy", "/terms", "/contact", "/faq", "/guides"];
   const sitemapTools = filterToolsForReview(tools);
   const sitemapCategories = toolCategoryGroups.filter((category) => getCategoryTools(category).length > 0);
 

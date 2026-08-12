@@ -2,7 +2,9 @@ export type ToolContent = {
   explanation: string[];
   howTo?: string[];
   features: string[];
+  useCases?: string[];
   supportedFormats: string;
+  limitations?: string[];
   privacyNote: string;
   faqs: Array<{ question: string; answer: string }>;
 };

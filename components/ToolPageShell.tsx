@@ -29,7 +29,9 @@ export function ToolPageShell({ tool, children }: ToolPageShellProps) {
   const pageUrl = `${siteConfig.url}${tool.href}`;
   const toolExplanation = customContent?.explanation ?? getToolExplanation(tool);
   const keyFeatures = customContent?.features ?? getKeyFeatures(tool);
+  const useCases = customContent?.useCases ?? getUseCases(tool);
   const supportedFormats = customContent?.supportedFormats ?? getSupportedFormats(tool);
+  const limitations = customContent?.limitations ?? getLimitations(tool);
   const privacyNote = customContent?.privacyNote ?? getPrivacyNote();
   const structuredData = [
     {
@@ -146,6 +148,28 @@ export function ToolPageShell({ tool, children }: ToolPageShellProps) {
           <p className="mt-3 text-sm leading-7 text-muted">{supportedFormats}</p>
         </div>
       </section>
+      <section className="mt-10 grid gap-6 lg:grid-cols-2">
+        <div className="rounded-lg border border-line bg-white p-6 shadow-soft">
+          <h2 className="text-2xl font-extrabold text-ink">Common use cases</h2>
+          <ul className="mt-4 grid gap-3">
+            {useCases.map((item) => (
+              <li key={item} className="rounded-lg border border-line bg-slate-50 p-4 text-sm leading-6 text-muted">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="rounded-lg border border-line bg-white p-6 shadow-soft">
+          <h2 className="text-2xl font-extrabold text-ink">Limitations to know</h2>
+          <ul className="mt-4 grid gap-3">
+            {limitations.map((item) => (
+              <li key={item} className="rounded-lg border border-line bg-slate-50 p-4 text-sm leading-6 text-muted">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
       <section className="mt-10 rounded-lg border border-line bg-white p-6 shadow-soft">
         <h2 className="text-2xl font-extrabold text-ink">Privacy note</h2>
         <p className="mt-3 text-sm leading-7 text-muted">{privacyNote}</p>
@@ -255,6 +279,60 @@ function getKeyFeatures(tool: ToolInfo) {
   ];
 }
 
+function getUseCases(tool: ToolInfo) {
+  if (tool.slug.includes("pdf")) {
+    return [
+      "Prepare visual documents for sharing, support tickets, class notes, forms, or simple archives.",
+      "Extract PDF pages as images for slides, tutorials, previews, or documentation.",
+      "Combine screenshots, receipts, sketches, or product images into a single PDF file.",
+      "Review document-image output before sending files to another person or platform.",
+    ];
+  }
+
+  if (tool.category === "convert") {
+    return [
+      "Convert an image when a website, app, form, or publishing platform rejects the original format.",
+      "Create a more compatible copy for clients, classmates, teammates, marketplaces, or support teams.",
+      "Prepare website assets by choosing a format that fits transparency, compatibility, or performance needs.",
+      "Keep the original file unchanged while exporting a new version for a specific destination.",
+    ];
+  }
+
+  if (tool.category === "compress") {
+    return [
+      "Reduce large photo files before uploading them to websites, stores, blogs, email, or forms.",
+      "Compare quality settings before choosing the smallest acceptable export.",
+      "Prepare faster-loading images for pages where mobile performance matters.",
+      "Create lighter copies while keeping original high-resolution images available for future edits.",
+    ];
+  }
+
+  if (tool.category === "resize") {
+    return [
+      "Match exact width and height requirements for websites, CMS uploads, forms, or thumbnails.",
+      "Create consistent image dimensions for galleries, blog cards, product grids, and portfolios.",
+      "Prepare smaller display-sized copies instead of uploading oversized originals.",
+      "Avoid distorted output by using aspect-ratio-aware fit, cover, or canvas workflows.",
+    ];
+  }
+
+  if (tool.category === "social") {
+    return [
+      "Prepare platform-ready profile pictures, covers, posts, banners, stories, thumbnails, or vertical visuals.",
+      "Keep important faces, logos, and text inside safer central areas before uploading.",
+      "Build consistent campaign assets across multiple social channels.",
+      "Create a separate resized copy while preserving the original design or photo.",
+    ];
+  }
+
+  return [
+    "Clean up screenshots, product photos, profile images, document visuals, or social graphics.",
+    "Apply one focused edit without opening a full design application.",
+    "Preview a local browser-rendered result before exporting a new copy.",
+    "Prepare images for publishing, sharing, documentation, ecommerce, or internal review.",
+  ];
+}
+
 function getSupportedFormats(tool: ToolInfo) {
   if (tool.slug.includes("pdf")) {
     return "This tool supports PDF and common browser-readable image formats depending on the workflow. Large PDFs or high-resolution images may take longer to process.";
@@ -273,6 +351,59 @@ function getSupportedFormats(tool: ToolInfo) {
   }
 
   return "Most tools support common browser-readable image formats such as JPG, PNG, WebP, AVIF, BMP, SVG, and GIF still frames where the browser can decode them.";
+}
+
+function getLimitations(tool: ToolInfo) {
+  const shared = [
+    "Very large images can require more device memory and may process more slowly on phones or older computers.",
+    "The exported file is a new browser-generated copy, so you should keep your original file if you may need to edit it again.",
+  ];
+
+  if (tool.slug.includes("heic")) {
+    return [
+      "HEIC decoding depends on browser and operating system support; unsupported files cannot be converted locally.",
+      "Some phone photos store orientation information in metadata, so check the downloaded result before publishing.",
+      ...shared,
+    ];
+  }
+
+  if (tool.slug.includes("tiff")) {
+    return [
+      "TIFF support is inconsistent across browsers, especially for multi-page or specialized TIFF files.",
+      "If the browser cannot decode the source image, ImageToolkit will not upload it to a server as a fallback.",
+      ...shared,
+    ];
+  }
+
+  if (tool.slug.includes("pdf")) {
+    return [
+      "Large or complex PDFs may take longer to render and can use significant memory in the browser.",
+      "Password-protected, damaged, or unusually encoded PDF files may not render correctly.",
+      ...shared,
+    ];
+  }
+
+  if (tool.category === "convert") {
+    return [
+      "Conversion quality depends on how the browser decodes the source image and exports the target format.",
+      "Transparency may be lost when converting to formats that do not support transparent pixels, such as JPG.",
+      ...shared,
+    ];
+  }
+
+  if (tool.category === "social") {
+    return [
+      "Social platforms can crop, recompress, or display images differently across devices after upload.",
+      "Platform size recommendations can change, so preview important posts or profile images after uploading.",
+      ...shared,
+    ];
+  }
+
+  return [
+    "Browser canvas export can slightly change compression, metadata, color handling, or file size compared with the source.",
+    "Advanced professional editing features such as layered design, raw photo editing, and AI restoration are outside this tool's current scope.",
+    ...shared,
+  ];
 }
 
 function getPrivacyNote() {

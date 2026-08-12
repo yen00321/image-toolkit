@@ -610,6 +610,15 @@ Ninth quality cleanup batch on 2026-08-12:
 - Added object URL cleanup for Images to PDF and PDF to Images previews to avoid stale browser memory when users upload new files or leave the page.
 - Goal: remove the remaining production build image warnings without changing GA, AdSense, canonical, robots, sitemap behavior, or existing tool URLs.
 
+Tenth AdSense-readiness content batch on 2026-08-12:
+
+- Added a human-readable `/sitemap` page with main pages, category sections, tool links, guides, metadata, canonical URL, and Breadcrumb schema.
+- Added `/sitemap` to the XML sitemap and footer navigation.
+- Added reusable "Common use cases" and "Limitations to know" sections to every tool page.
+- The new tool-page sections explain practical usage, browser support limits, platform recompression, file size constraints, PDF limitations, HEIC/TIFF support variance, and original-file safety.
+- Upgraded guide article related-tool links into richer "Recommended tools for this guide" cards with descriptions and clearer CTAs.
+- This batch is intended to strengthen site navigation, transparency, original utility, and AdSense low-value-content resilience without changing GA4, AdSense, canonical, robots, or existing tool URLs.
+
 Next phase:
 
 - Continue expanding custom content in small batches before exposing more tool pages to indexing.

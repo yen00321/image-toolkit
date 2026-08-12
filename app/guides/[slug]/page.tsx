@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Clock, Tag } from "lucide-react";
+import { ArrowRight, Clock, Tag } from "lucide-react";
 import { getGuideArticle, guideArticles } from "@/lib/guide-articles";
 import { siteConfig } from "@/lib/site";
 import { getToolsBySlugs } from "@/lib/tool-categories";
@@ -173,15 +173,25 @@ export default async function GuideArticlePage({ params }: GuidePageProps) {
         ))}
 
         <section className="mt-10 rounded-lg border border-line bg-slate-50 p-5">
-          <h2 className="text-2xl font-extrabold text-ink">Related tools</h2>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <h2 className="text-2xl font-extrabold text-ink">Recommended tools for this guide</h2>
+          <p className="mt-3 text-sm leading-6 text-muted">
+            Use these browser-based tools to apply the ideas from this guide. Each tool opens in its
+            own page, processes supported files locally, and creates a downloadable copy.
+          </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {relatedTools.map((tool) => (
               <Link
                 key={tool.slug}
                 href={tool.href}
-                className="rounded-md border border-line bg-white px-3 py-2 text-sm font-bold text-ink hover:border-brand hover:text-brand"
+                className="group rounded-lg border border-line bg-white p-4 hover:border-brand"
               >
-                {tool.name}
+                <span className="text-xs font-bold uppercase tracking-wide text-brand">{tool.category}</span>
+                <h3 className="mt-2 font-extrabold text-ink group-hover:text-brand">{tool.name}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">{tool.description}</p>
+                <span className="mt-3 inline-flex items-center gap-2 text-sm font-extrabold text-brand">
+                  Open tool
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" />
+                </span>
               </Link>
             ))}
           </div>
